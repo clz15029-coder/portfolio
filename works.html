@@ -7,44 +7,79 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Portfolio</a>
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">TOP</a>
-        <a href="about.html">ABOUT</a>
-        <a href="works.html">WORKS</a>
-        <a href="process-skills.html">PROCESS / SKILLS</a>
-        <a href="personal-works.html">PERSONAL WORKS</a>
-        <a href="contact.html">CONTACT</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-profile">
+        <span class="avatar">P</span>
+        <span>
+          <p class="sidebar-role">Designer</p>
+          <p class="sidebar-name">あなたの名前</p>
+        </span>
+      </a>
+      <nav class="sidebar-nav">
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="process-skills.html">Process / Skills</a>
+        <a href="personal-works.html">Personal Works</a>
+        <a href="contact.html">Contact</a>
       </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <p class="page-eyebrow">WORKS</p>
-        <h1>作品一覧</h1>
-        <p>WEB / バナー・グラフィック / ロゴ / 印刷物のカテゴリで絞り込みできる一覧を準備中です。</p>
+      <div class="sidebar-social">
+        <a href="#">X (Twitter)</a>
+        <a href="#">Instagram</a>
       </div>
-    </section>
+    </aside>
+    <div class="sidebar-overlay"></div>
 
-    <section class="coming-soon">
-      <div class="container">
-        <div class="placeholder-box">
-          <p>作品一覧・カテゴリフィルタは準備中です。<br />近日中に掲載予定です。</p>
+    <div class="main-column">
+      <div class="mobile-topbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+      </div>
+
+      <main class="content">
+        <div class="works-title-row">
+          <h1>Works</h1>
+          <span class="works-count">2</span>
         </div>
-      </div>
-    </section>
-  </main>
+        <p class="section-lead">これまでの制作実績です。カテゴリで絞り込みできます。</p>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 あなたの名前. All rights reserved.</p>
+        <div class="filter-pills">
+          <button class="filter-pill is-active" type="button">All</button>
+          <button class="filter-pill" type="button">WEB</button>
+          <button class="filter-pill" type="button">バナー・グラフィック</button>
+          <button class="filter-pill" type="button">ロゴ</button>
+          <button class="filter-pill" type="button">印刷物</button>
+        </div>
+
+        <div class="works-grid">
+          <a href="#" class="work-card">
+            <div class="work-thumb">作品画像(準備中)</div>
+            <h3>ダミー作品タイトル 1</h3>
+            <div class="work-tags">
+              <span class="work-tag">WEB</span>
+            </div>
+          </a>
+          <a href="#" class="work-card">
+            <div class="work-thumb">作品画像(準備中)</div>
+            <h3>ダミー作品タイトル 2</h3>
+            <div class="work-tags">
+              <span class="work-tag">ロゴ</span>
+            </div>
+          </a>
+        </div>
+
+        <section class="coming-soon">
+          <div class="placeholder-box">
+            <p>絞り込み機能・作品詳細ページへのリンクはDay2〜3で実装予定です。<br />ここではレイアウトの見た目のみ確認用です。</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 あなたの名前. All rights reserved.</p>
+      </footer>
     </div>
-  </footer>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

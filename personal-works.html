@@ -7,44 +7,54 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Portfolio</a>
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">TOP</a>
-        <a href="about.html">ABOUT</a>
-        <a href="works.html">WORKS</a>
-        <a href="process-skills.html">PROCESS / SKILLS</a>
-        <a href="personal-works.html">PERSONAL WORKS</a>
-        <a href="contact.html">CONTACT</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-profile">
+        <span class="avatar">P</span>
+        <span>
+          <p class="sidebar-role">Designer</p>
+          <p class="sidebar-name">あなたの名前</p>
+        </span>
+      </a>
+      <nav class="sidebar-nav">
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="process-skills.html">Process / Skills</a>
+        <a href="personal-works.html">Personal Works</a>
+        <a href="contact.html">Contact</a>
       </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <p class="page-eyebrow">PERSONAL WORKS</p>
-        <h1>個人制作</h1>
-        <p>個人的に制作したものを軽くまとめて掲載予定です。</p>
+      <div class="sidebar-social">
+        <a href="#">X (Twitter)</a>
+        <a href="#">Instagram</a>
       </div>
-    </section>
+    </aside>
+    <div class="sidebar-overlay"></div>
 
-    <section class="coming-soon">
-      <div class="container">
-        <div class="placeholder-box">
-          <p>個人制作の紹介は準備中です。</p>
-        </div>
+    <div class="main-column">
+      <div class="mobile-topbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 あなたの名前. All rights reserved.</p>
+      <main class="content">
+        <section class="page-header">
+          <p class="page-eyebrow">PERSONAL WORKS</p>
+          <h1>個人制作</h1>
+          <p>個人的に制作したものを軽くまとめて掲載予定です。</p>
+        </section>
+
+        <section class="coming-soon">
+          <div class="placeholder-box">
+            <p>個人制作の紹介は準備中です。</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 あなたの名前. All rights reserved.</p>
+      </footer>
     </div>
-  </footer>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

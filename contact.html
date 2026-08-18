@@ -7,42 +7,52 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Portfolio</a>
-      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">TOP</a>
-        <a href="about.html">ABOUT</a>
-        <a href="works.html">WORKS</a>
-        <a href="process-skills.html">PROCESS / SKILLS</a>
-        <a href="personal-works.html">PERSONAL WORKS</a>
-        <a href="contact.html">CONTACT</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-profile">
+        <span class="avatar">P</span>
+        <span>
+          <p class="sidebar-role">Designer</p>
+          <p class="sidebar-name">あなたの名前</p>
+        </span>
+      </a>
+      <nav class="sidebar-nav">
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="process-skills.html">Process / Skills</a>
+        <a href="personal-works.html">Personal Works</a>
+        <a href="contact.html">Contact</a>
       </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <p class="page-eyebrow">CONTACT</p>
-        <h1>お問い合わせ</h1>
-        <p>制作のご相談や質問があれば、お気軽にご連絡ください。</p>
+      <div class="sidebar-social">
+        <a href="#">X (Twitter)</a>
+        <a href="#">Instagram</a>
       </div>
-    </section>
+    </aside>
+    <div class="sidebar-overlay"></div>
 
-    <section class="section contact-section">
-      <div class="container">
-        <a href="mailto:you@example.com" class="button secondary">メールで問い合わせる</a>
+    <div class="main-column">
+      <div class="mobile-topbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 あなたの名前. All rights reserved.</p>
+      <main class="content">
+        <section class="page-header">
+          <p class="page-eyebrow">CONTACT</p>
+          <h1>お問い合わせ</h1>
+          <p>制作のご相談や質問があれば、お気軽にご連絡ください。</p>
+        </section>
+
+        <section class="section contact-section">
+          <a href="mailto:you@example.com" class="button secondary">メールで問い合わせる</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 あなたの名前. All rights reserved.</p>
+      </footer>
     </div>
-  </footer>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
