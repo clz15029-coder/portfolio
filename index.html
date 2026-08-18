@@ -9,30 +9,33 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="logo">My Portfolio</a>
-      <button class="menu-toggle" aria-label="メニューを開く">☰</button>
+      <a href="index.html" class="logo">Portfolio</a>
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
       <nav class="site-nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">TOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="works.html">WORKS</a>
+        <a href="process-skills.html">PROCESS / SKILLS</a>
+        <a href="personal-works.html">PERSONAL WORKS</a>
+        <a href="contact.html">CONTACT</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
       <div class="container hero-content">
         <p class="eyebrow">はじめまして、</p>
         <h1>Webデザインとコーディングが好きな<br />フロントエンド学習者です</h1>
         <p>HTML・CSS を中心に、シンプルで見やすいサイトを作っています。</p>
-        <a href="#projects" class="button">制作実績を見る</a>
+        <a href="works.html" class="button">制作実績を見る</a>
       </div>
     </section>
 
-    <section id="about" class="section about-section">
+    <section class="section about-section">
       <div class="container">
         <h2>About</h2>
-        <p>現在 HTML と CSS を学習中です。シンプルで分かりやすい表現を大切にし、実際に動くサイトを作りながらスキルを高めています。</p>
+        <p class="section-lead">現在 HTML と CSS を学習中です。シンプルで分かりやすい表現を大切にし、実際に動くサイトを作りながらスキルを高めています。</p>
         <div class="about-grid">
           <div>
             <h3>学習中の技術</h3>
@@ -47,41 +50,44 @@
             <p>レスポンシブで使いやすいポートフォリオサイトを完成させ、Web制作の基礎を固めたいです。</p>
           </div>
         </div>
+        <p class="section-footer"><a href="about.html" class="button secondary">プロフィールを詳しく見る</a></p>
       </div>
     </section>
 
-    <section id="projects" class="section projects-section">
+    <section class="section works-section">
       <div class="container">
-        <h2>Projects</h2>
-        <div class="project-list">
-          <article class="project-card">
-            <h3>静的サイト制作</h3>
-            <p>HTML と CSS だけで作ったレスポンシブなサイトの例です。構造を整え、スタイルを丁寧に調整しました。</p>
+        <h2>Works</h2>
+        <p class="section-lead">これまでに手がけた制作物を掲載予定です(現在準備中)。</p>
+        <div class="card-list">
+          <article class="card">
+            <h3>WEB</h3>
+            <p>Webサイト・LP制作の実績を掲載予定です。</p>
           </article>
-          <article class="project-card">
-            <h3>学習サポートページ</h3>
-            <p>学習メモや学んだことをまとめるページを作成。分かりやすく整理されたレイアウトを意識しました。</p>
+          <article class="card">
+            <h3>バナー・グラフィック</h3>
+            <p>バナーやグラフィック制作の実績を掲載予定です。</p>
           </article>
-          <article class="project-card">
-            <h3>フリーランス風プロフィール</h3>
-            <p>自己紹介やスキルを掲載するポートフォリオページのデザイン案です。見やすさを重視しています。</p>
+          <article class="card">
+            <h3>ロゴ・印刷物</h3>
+            <p>ロゴデザインや印刷物の実績を掲載予定です。</p>
           </article>
         </div>
+        <p class="section-footer"><a href="works.html" class="button secondary">作品一覧を見る</a></p>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
+    <section class="section contact-section">
       <div class="container">
         <h2>Contact</h2>
-        <p>制作のご相談や質問があれば、以下のリンクからお気軽にご連絡ください。</p>
-        <a href="mailto:you@example.com" class="button secondary">メールで問い合わせる</a>
+        <p>制作のご相談や質問があれば、お気軽にご連絡ください。</p>
+        <a href="contact.html" class="button secondary">お問い合わせページへ</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 あなたの名前. HTML / CSS 学習中.</p>
+      <p>© 2026 あなたの名前. All rights reserved.</p>
     </div>
   </footer>
 

@@ -8,3 +8,11 @@ if (menuToggle && siteNav) {
     menuToggle.setAttribute('aria-expanded', expanded.toString());
   });
 }
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.site-nav a').forEach((link) => {
+  const linkPage = link.getAttribute('href').split('/').pop();
+  if (linkPage === currentPage) {
+    link.classList.add('is-current');
+  }
+});
