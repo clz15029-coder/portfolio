@@ -14,7 +14,7 @@ function renderWorkDetail() {
     <h1>${work.title}</h1>
     <p class="work-detail-summary">${work.summary}</p>
 
-    <dl class="work-meta">
+    <dl class="meta-grid">
       <div>
         <dt>制作期間</dt>
         <dd>${work.period}</dd>

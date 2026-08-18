@@ -366,6 +366,13 @@ button {
   color: var(--muted);
 }
 
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 /* ===== ボタン ===== */
 
 .button {
@@ -430,7 +437,7 @@ button {
   line-height: 1.8;
 }
 
-.work-meta {
+.meta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
@@ -440,13 +447,13 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
-.work-meta dt {
+.meta-grid dt {
   font-size: 0.75rem;
   color: var(--muted);
   margin-bottom: 0.4rem;
 }
 
-.work-meta dd {
+.meta-grid dd {
   margin: 0;
   font-weight: 600;
   word-break: break-word;
@@ -515,7 +522,7 @@ button {
 }
 
 @media (max-width: 640px) {
-  .work-meta {
+  .meta-grid {
     grid-template-columns: 1fr;
   }
 
