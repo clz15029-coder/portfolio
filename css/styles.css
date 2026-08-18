@@ -272,7 +272,7 @@ button {
 
 .hero-text p {
   max-width: 560px;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -419,6 +419,109 @@ button {
   color: var(--muted);
   max-width: 640px;
   line-height: 1.8;
+}
+
+/* ===== WORKS詳細 ===== */
+
+.work-detail-summary {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.work-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.work-meta dt {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.work-meta dd {
+  margin: 0;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.work-detail-thumb {
+  aspect-ratio: 16 / 9;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.work-detail-section {
+  margin-bottom: 3rem;
+}
+
+.work-detail-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.work-points {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.process-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.process-step-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  background: var(--canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.process-step h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
+.process-step p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .work-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== WORKS一覧:フィルタピル + カードグリッド ===== */
