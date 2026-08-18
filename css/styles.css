@@ -41,12 +41,6 @@ button {
   font: inherit;
 }
 
-.container {
-  max-width: 880px;
-  margin: 0 auto;
-  width: 100%;
-}
-
 /* ===== 全体レイアウト:左サイドバー + コンテンツ ===== */
 
 .layout {
@@ -439,7 +433,7 @@ button {
 
 .meta-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
   padding: 1.5rem 0;
@@ -475,9 +469,16 @@ button {
   margin: 0 0 1.25rem;
 }
 
+.work-detail-section > p {
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
 .work-points {
   margin: 0;
   padding-left: 1.2rem;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
