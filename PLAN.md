@@ -32,13 +32,15 @@
 メモ: 2026-08-19、ユーザーから実際のポートフォリオPDF(杉山弥優＿制作実績＿最終版)を受領。氏名を実名(杉山弥優)に置き換え、TOPページのキャッチコピーをPDF記載の実際のタグラインに変更。WORKS6件は前職(AIコミュニケーション)での実案件(タクシーチケット/横浜ウィークリー/柴田設備/三田工業所/日化産業/横浜ケーブルビジョン)の実際の概要・プロセスを使用。作品画像は未挿入(プレースホルダーのまま)。ABOUT/PROCESS・SKILLS/PERSONAL WORKSの実データ化はDay4〜5で対応予定(PDFにプロフィール・スキル・卒業制作・イラスト制作の内容あり)。
 また、MV下のテキストが中央揃え/左揃えで混在していた不具合(`.hero-text p`の`margin:0 auto`)を修正。
 
-## Day4: ABOUT + PROCESS・SKILLS
-- [ ] ABOUTページ本実装(プロフィール枠・経歴・スキル)
-- [ ] PROCESS・SKILLSページ本実装(フロー図・Notion手順化の枠)
+## Day4: ABOUT + PROCESS・SKILLS ✅完了
+- [x] ABOUTページ本実装(実プロフィール・経歴・心がけていること・Instagram)
+- [x] PROCESS・SKILLSページ本実装(実スキル5項目・対応業界・ツール・仕事への向き合い方)
 
-## Day5: PERSONAL WORKS + CONTACT
-- [ ] PERSONAL WORKSページ本実装
-- [ ] CONTACTページ本実装
+## Day5: PERSONAL WORKS + CONTACT ✅完了
+- [x] PERSONAL WORKSページ本実装(卒業制作wan-idea/JIDA賞、イラスト制作)
+- [x] CONTACTページ本実装(メール+Instagram)
+
+メモ: 2026-08-19、Day4/5もPDFの実データで前倒し完了。サイドバーのSNSリンクは実在するInstagramのみに統一(架空のX/Twitterリンクを削除)。MVキャプションのfont-style:italicがZen Kaku Gothic Newに合成表示され「がたつく」不具合も修正(letter-spacingに変更)。残るのは、作品画像・プロフィール写真などの実素材の挿入のみ(Day6〜7、または素材準備後に別途対応)。
 
 ## Day6: 横断ポリッシュ
 - [ ] 余白・フォント階調・ホバー演出の統一
