@@ -223,7 +223,7 @@ button {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  font-style: italic;
+  letter-spacing: 0.03em;
   color: var(--muted);
   font-size: 0.9rem;
   margin: 0;
@@ -234,7 +234,7 @@ button {
   top: 2rem;
   right: 2rem;
   text-align: right;
-  font-style: italic;
+  letter-spacing: 0.03em;
   color: var(--muted);
   line-height: 1.7;
   font-size: 0.9rem;
