@@ -422,6 +422,21 @@ button {
   line-height: 1.8;
 }
 
+.profile-photo {
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  background: var(--canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
 /* ===== WORKS詳細 ===== */
 
 .work-detail-summary {
@@ -864,6 +879,7 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 720px;
   margin: 2rem 0 3rem;
 }
 
@@ -882,6 +898,7 @@ body.modal-open {
   gap: 1.5rem;
   padding: 1.25rem 1.5rem;
   border: none;
+  border-radius: inherit;
   background: none;
   text-align: left;
   font-family: var(--font-heading);
