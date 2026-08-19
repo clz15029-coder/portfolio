@@ -72,3 +72,26 @@ if (detailModal && detailModalBackdrop) {
     }
   });
 }
+
+function calculateAge(birthDateString) {
+  const birthDate = new Date(birthDateString);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  // 今年の誕生日がまだ来ていない場合は1歳引く
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
+// 2000年9月7日生まれの年齢を計算して表示
+document.addEventListener('DOMContentLoaded', () => {
+  const ageElement = document.getElementById('age');
+  if (ageElement) {
+    ageElement.textContent = calculateAge('2000-09-07');
+  }
+});
