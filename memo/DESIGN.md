@@ -53,6 +53,7 @@
 - **作品詳細モーダル** (`.detail-modal` / `.detail-modal-backdrop`): WORKS一覧で作品カードをクリックすると、画面右から幅58vw(最大640px、モバイルは全幅)のパネルがスライドインして詳細を表示する「半分モーダル」形式。背景クリック・×ボタン・Escapeキーで閉じる。URLは`work-detail.html?id=`にpushStateで書き換わるため、直接アクセス・共有・リロード時はフルページ版(`work-detail.html`)が同じ内容を表示する
 - **作品詳細のレイアウト** (`.work-meta-list`, `.work-detail-link`): タイトル→タグ(カテゴリ+「Clientwork」)→説明文→Client/Scope/Yearのラベル・値リスト→区切り線→URLリンク、というコンパクトな構成に統一。フルページ版・モーダルの両方で`js/work-render.js`の`renderWorkDetailHTML()`を共通利用
 - **TOPページのWorksセクション**: 静的な3カテゴリ紹介ではなく、大分類3つそれぞれから最大3件をランダムに選んで実際の作品カードを表示する(`js/top-works.js`、`.work-card`を`js/work-render.js`の`renderWorkCardHTML()`で共通生成)。再読み込みのたびに表示が入れ替わる
+- **FAQアコーディオン** (`.faq-item`, `.faq-question`, `.faq-answer`): 質問行(角丸16px・枠線・白背景)をクリックすると回答が開閉する。右側の「＋」アイコンは開くと縦棒が縮んで「−」になる(色は`--text`のみ、有彩色なし)。開閉アニメーションは`grid-template-rows`のトランジションで実装(`js/faq.js`はクラス付け替えのみ)。参考サイト(morohoshi.site)のNewsセクションのアコーディオンを踏襲する想定だが、環境上ブラウザで実際の見た目を確認できなかったため、既存のモノトーン角丸デザインに合わせた標準的な実装にしている
 
 ## 今後の調整余地
 
