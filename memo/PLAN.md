@@ -82,6 +82,8 @@
 
 メモ: 2026-08-19、3件のリクエストに対応。(1) FAQページ(`faq.html`)を新設、サイドバーナビはCONTACTの直前に配置(内容は「準備中」のプレースホルダーのみ、質問追加用のコメントテンプレート付き)。(2) `works-data.js`の内容を`memo/works-content.csv`としてCSV出力(列: id/category/title/client/period/role/url/summary/point1-3、tagsはcategoryから自動生成のため含めず)。ユーザーがExcel等で編集後、再度Claude Codeに渡して`works-data.js`へ流し込む運用を想定し、手順を`memo/作品の追加方法.md`に追記。(3) TOPページのWorksセクションを、静的な3カテゴリ紹介カードから、大分類3つ(デジタル・Web系/グラフィック・印刷/ブランディング・CI/VI)ごとに実データから最大3件をランダム抽出して表示する動的な仕組みに変更(`js/top-works.js`新規、カード生成は`js/work-render.js`の`renderWorkCardHTML()`をworks-list.jsと共用)。グラフィック・印刷は現状2件しかないため、その2件がそのまま表示される。
 
+メモ: 2026-08-19、ユーザーから提供されたFAQ本文(Q1〜Q7、制作の進め方・修正対応・効率化などに関する質問と回答)をfaq.htmlに反映(暫定版と明言あり)。また、TOPページのContactセクションの説明文を、contact.htmlの導入文(生成AI活用のデザインシステム構築・社内ツール開発支援についての案内)と同じ内容に変更。
+
 ## スコープ外(今週やらないこと)
 - 実案件6〜10件の実データ、実写真、実プロセス資料
 - Notion手順化の実スクリーンショット、ABOUT本文・実写真
