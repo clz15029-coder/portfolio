@@ -265,7 +265,6 @@ button {
 }
 
 .hero-text p {
-  max-width: 560px;
   margin: 0;
   line-height: 1.9;
   color: var(--muted);
