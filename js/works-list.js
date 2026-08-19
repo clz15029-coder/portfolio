@@ -40,32 +40,16 @@ function renderWorksList() {
   allPill.textContent = 'All';
   pillsContainer.appendChild(allPill);
 
-  CATEGORY_GROUPS.forEach((group) => {
-    const childrenPresent = group.children.filter((child) => categoriesPresent.has(child.key));
-    if (!childrenPresent.length) return;
-
-    const groupEl = document.createElement('div');
-    groupEl.className = 'filter-group';
-
-    const label = document.createElement('span');
-    label.className = 'filter-group-label';
-    label.textContent = group.label;
-    groupEl.appendChild(label);
-
-    const pillsEl = document.createElement('div');
-    pillsEl.className = 'filter-group-pills';
-    childrenPresent.forEach((child) => {
+  CATEGORY_GROUPS.flatMap((group) => group.children)
+    .filter((child) => categoriesPresent.has(child.key))
+    .forEach((child) => {
       const pill = document.createElement('button');
       pill.className = 'filter-pill';
       pill.type = 'button';
       pill.dataset.filter = child.key;
       pill.textContent = child.label;
-      pillsEl.appendChild(pill);
+      pillsContainer.appendChild(pill);
     });
-    groupEl.appendChild(pillsEl);
-
-    pillsContainer.appendChild(groupEl);
-  });
 
   function renderCards(filter) {
     grid.innerHTML = '';
