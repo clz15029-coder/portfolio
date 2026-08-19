@@ -1,12 +1,3 @@
-const CATEGORY_LABELS = {
-  web: 'WEB',
-  banner: 'バナー・グラフィック',
-  logo: 'ロゴ',
-  print: '印刷物',
-  personal: '個人制作',
-  illustration: 'イラスト'
-};
-
 function showWorkModal(id, { updateHistory = true } = {}) {
   const work = worksData.find((w) => w.id === id);
   if (!work || typeof openDetailModal !== 'function') return;
@@ -39,8 +30,9 @@ function renderWorksList() {
 
   countEl.textContent = worksData.length;
 
-  const categoriesPresent = [...new Set(worksData.map((w) => w.category))];
+  const categoriesPresent = new Set(worksData.map((w) => w.category));
   pillsContainer.innerHTML = '';
+
   const allPill = document.createElement('button');
   allPill.className = 'filter-pill is-active';
   allPill.type = 'button';
@@ -48,13 +40,31 @@ function renderWorksList() {
   allPill.textContent = 'All';
   pillsContainer.appendChild(allPill);
 
-  categoriesPresent.forEach((cat) => {
-    const pill = document.createElement('button');
-    pill.className = 'filter-pill';
-    pill.type = 'button';
-    pill.dataset.filter = cat;
-    pill.textContent = CATEGORY_LABELS[cat] || cat;
-    pillsContainer.appendChild(pill);
+  CATEGORY_GROUPS.forEach((group) => {
+    const childrenPresent = group.children.filter((child) => categoriesPresent.has(child.key));
+    if (!childrenPresent.length) return;
+
+    const groupEl = document.createElement('div');
+    groupEl.className = 'filter-group';
+
+    const label = document.createElement('span');
+    label.className = 'filter-group-label';
+    label.textContent = group.label;
+    groupEl.appendChild(label);
+
+    const pillsEl = document.createElement('div');
+    pillsEl.className = 'filter-group-pills';
+    childrenPresent.forEach((child) => {
+      const pill = document.createElement('button');
+      pill.className = 'filter-pill';
+      pill.type = 'button';
+      pill.dataset.filter = child.key;
+      pill.textContent = child.label;
+      pillsEl.appendChild(pill);
+    });
+    groupEl.appendChild(pillsEl);
+
+    pillsContainer.appendChild(groupEl);
   });
 
   function renderCards(filter) {

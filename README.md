@@ -20,8 +20,9 @@
 ├── js/
 │   ├── main.js             共通UI制御(サイドバー開閉、作品詳細モーダルの開閉)
 │   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細・モーダルに反映)
+│   ├── category-groups.js  WORKSカテゴリの大分類3つ×小分類7つの定義
 │   ├── work-render.js      作品詳細の共通HTML生成(work-detail.htmlとモーダルの両方で使用)
-│   ├── works-list.js       WORKS一覧ページの描画・フィルタ・モーダル制御
+│   ├── works-list.js       WORKS一覧ページの描画・フィルタ(大分類→小分類)・モーダル制御
 │   └── work-detail.js      WORKS詳細ページ(フルページ版)の描画ロジック
 ├── images/
 │   ├── profile/            プロフィール写真用(現状未挿入)
