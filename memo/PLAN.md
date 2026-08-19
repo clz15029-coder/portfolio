@@ -68,6 +68,8 @@
 
 メモ: 2026-08-19、ユーザー提供のPDFポートフォリオ(杉山弥優＿制作実績＿最終版)を参照し、PERSONAL WORKSページに卒業制作(wan-idea、深掘り型)とイラスト制作(ライト型、使用ソフト：CLIP STUDIO PAINT / Adobe Photoshop CC)を復元。ライト型は`.light-works-grid`で横並び最大3つまでのグリッド表示に変更(CSS追加)。また、WORKS一覧ページのカードにも制作期間(`period`)をカテゴリタグの右側に表示するよう`js/works-list.js`とCSSを更新。
 
+メモ: 2026-08-19、サイドバーナビの並び順をユーザーの意向で「Works→Personal Works→Process→About→Contact」に変更(全7ページ共通、`js/main.js`の現在地ハイライトは順不同ロジックのため影響なし)。あわせて「Process / Skills」ページから「Process」ページに変更し、スキル・対応業界・ツールのセクションをABOUTページへ移動(概要の直後、心がけていることの前)。process-skills.htmlは制作アプローチ・仕事への向き合い方のみのProcessページとして残存(ファイル名・URLは変更していない)。
+
 ## スコープ外(今週やらないこと)
 - 実案件6〜10件の実データ、実写真、実プロセス資料
 - Notion手順化の実スクリーンショット、ABOUT本文・実写真
