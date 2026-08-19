@@ -1,1 +1,60 @@
-# portfolio
+# Portfolio
+
+杉山弥優のポートフォリオサイト。フレームワークを使わない素のHTML/CSS/JS構成で、GitHub Pagesで公開しています。
+
+- 公開URL: https://clz15029-coder.github.io/portfolio/
+
+## フォルダ構成
+
+```
+.
+├── index.html            TOPページ
+├── about.html             ABOUTページ
+├── works.html             WORKS一覧ページ
+├── work-detail.html       WORKS詳細ページ(?id=で出し分け)
+├── process-skills.html    PROCESS・SKILLSページ
+├── personal-works.html    PERSONAL WORKSページ
+├── contact.html           CONTACTページ
+├── css/
+│   └── styles.css         全ページ共通スタイル
+├── js/
+│   ├── main.js             共通UI制御(サイドバー開閉など)
+│   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細に反映)
+│   ├── works-list.js       WORKS一覧ページの描画ロジック
+│   └── work-detail.js      WORKS詳細ページの描画ロジック
+├── images/
+│   ├── profile/            プロフィール写真用(現状未挿入)
+│   ├── works/               作品画像用(現状未挿入)
+│   └── ui/                  その他UI素材用(現状未挿入)
+└── docs/
+    ├── archive/             役目を終えた過去ドキュメント(参考用)
+    └── ...                  運用ドキュメント(下記参照)
+```
+
+## ドキュメント
+
+作業ルールやデザイン方針、進捗管理は用途ごとに分けています。
+
+| ファイル | 内容 |
+|---|---|
+| [CLAUDE.md](CLAUDE.md) | このプロジェクトでの作業ルール(Claude Codeとの進め方) |
+| [DESIGN.md](DESIGN.md) | 配色・フォント・コンポーネントなどのデザイン方針 |
+| [PLAN.md](PLAN.md) | 日ごとの進捗管理・作業メモ |
+| [作品の追加方法.md](作品の追加方法.md) | WORKSページに新しい作品を追加する手順 |
+| [docs/archive/](docs/archive/) | 制作開始前の初期プランなど、現在は参照用のみの古いドキュメント |
+
+## ローカルで確認する
+
+ビルド不要。任意のローカルサーバーで`index.html`を配信すれば確認できます。
+
+```
+python3 -m http.server 8000
+```
+
+その後ブラウザで http://localhost:8000 を開く。
+
+## 作品データについて
+
+WORKS一覧・詳細ページは `js/works-data.js` の配列から自動生成されます。新しい作品の追加方法は [作品の追加方法.md](作品の追加方法.md) を参照してください。
+
+PERSONAL WORKSページ(`personal-works.html`)は現在内容を空にしており、ページヘッダーのみの状態です。
