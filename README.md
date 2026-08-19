@@ -14,7 +14,6 @@
 ├── about.html             ABOUTページ
 ├── works.html             WORKS一覧ページ
 ├── work-detail.html       WORKS詳細ページ(?id=で出し分け)
-├── process-skills.html    PROCESS・SKILLSページ
 ├── personal-works.html    PERSONAL WORKSページ
 ├── contact.html           CONTACTページ
 ├── css/
@@ -61,4 +60,4 @@ python3 -m http.server 8000
 
 WORKS一覧・詳細ページは `js/works-data.js` の配列から自動生成されます。新しい作品の追加方法は [memo/作品の追加方法.md](memo/作品の追加方法.md) を参照してください。
 
-PERSONAL WORKSページ(`personal-works.html`)は現在内容を空にしており、ページヘッダーのみの状態です。
+PERSONAL WORKSページ(`personal-works.html`)は`js/works-data.js`を使わず、HTMLに直接書く方式です。追加方法は [memo/作品の追加方法.md](memo/作品の追加方法.md) を参照してください。
