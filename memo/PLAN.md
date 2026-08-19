@@ -74,6 +74,8 @@
 
 メモ: 2026-08-19、ユーザーの意向でProcessページの内容もABOUTページへ統合。process-skills.htmlは削除し、サイドバーナビは「Works→Personal Works→About→Contact」の4項目に(全ページ共通)。ABOUTページの構成は 概要→デザインプロセス(旧Processの導入文)→スキル→対応してきた業界→ツール→仕事への向き合い方(旧Processのカード)→心がけていること→Instagram、の順。README.mdのフォルダ構成表からもprocess-skills.htmlの行を削除。
 
+メモ: 2026-08-19、WORKS周りを大きく再構成。(1) 作品カードをクリックした時、ページ遷移せず画面右から半分幅(58vw/最大640px)のモーダルパネルで詳細を表示する「半分モーダル」形式に変更(`js/main.js`にモーダル開閉ロジック、`js/works-list.js`にクリックハンドラ・pushState/popstate制御を追加)。URLは`work-detail.html?id=`にpushStateで書き換わるため、直接リンク・共有・リロードはフルページ版(`work-detail.html`)が引き続き機能する。(2) 作品詳細のレイアウトをユーザー提供のリファレンス画像に合わせ、タイトル→タグ(カテゴリ+「Clientwork」固定タグ)→説明文→Client/Scope/Yearのリスト→区切り線→URLリンク、というコンパクトな構成に統一。旧来の「概要(箇条書き)」見出しと「制作プロセス」セクションは表示しないことにした(データの`process`配列自体は残置、将来復活可能)。共通レンダリングは`js/work-render.js`の`renderWorkDetailHTML()`に集約し、フルページ版・モーダルの両方で使用。(3) PERSONAL WORKSページ(`personal-works.html`)を廃止してWORKSに統合。`works-data.js`にカテゴリ`personal`(個人制作)・`illustration`(イラスト)を追加し、卒業制作(wan-idea)とイラスト制作をこの2カテゴリの作品として再登録(id:07,08)。PDFポートフォリオ31〜34ページの仮データ21件(id:09〜29)も、ジャンルに応じて既存カテゴリ(web/banner/logo)に振り分けてworks-dataに統合。`client`フィールドを全作品に追加(既存6件は実データ、新規21件は`XXXX(要変更)`のプレースホルダー)。サイドバーナビは「Works→About→Contact」の3項目に簡素化。
+
 ## スコープ外(今週やらないこと)
 - 実案件6〜10件の実データ、実写真、実プロセス資料
 - Notion手順化の実スクリーンショット、ABOUT本文・実写真

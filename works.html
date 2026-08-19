@@ -18,7 +18,6 @@
       </a>
       <nav class="sidebar-nav">
         <a href="works.html">Works</a>
-        <a href="personal-works.html">Personal Works</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -58,7 +57,14 @@
     </div>
   </div>
 
+  <div class="detail-modal-backdrop" data-modal-backdrop></div>
+  <div class="detail-modal" data-modal-panel>
+    <button type="button" class="detail-modal-close" data-modal-close aria-label="閉じる">×</button>
+    <div class="detail-modal-body" data-modal-body></div>
+  </div>
+
   <script src="js/works-data.js"></script>
+  <script src="js/work-render.js"></script>
   <script src="js/works-list.js"></script>
   <script src="js/main.js"></script>
 </body>

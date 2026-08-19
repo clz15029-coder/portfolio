@@ -2,8 +2,34 @@ const CATEGORY_LABELS = {
   web: 'WEB',
   banner: 'バナー・グラフィック',
   logo: 'ロゴ',
-  print: '印刷物'
+  print: '印刷物',
+  personal: '個人制作',
+  illustration: 'イラスト'
 };
+
+function showWorkModal(id, { updateHistory = true } = {}) {
+  const work = worksData.find((w) => w.id === id);
+  if (!work || typeof openDetailModal !== 'function') return;
+  openDetailModal(renderWorkDetailHTML(work, { showBackLink: false }));
+  if (updateHistory) {
+    history.pushState({ workId: id }, '', `work-detail.html?id=${id}`);
+  }
+}
+
+window.onDetailModalClose = () => {
+  if (new URLSearchParams(location.search).get('id')) {
+    history.pushState(null, '', 'works.html');
+  }
+};
+
+window.addEventListener('popstate', () => {
+  const id = new URLSearchParams(location.search).get('id');
+  if (id) {
+    showWorkModal(id, { updateHistory: false });
+  } else if (typeof closeDetailModal === 'function') {
+    closeDetailModal();
+  }
+});
 
 function renderWorksList() {
   const grid = document.querySelector('.works-grid');
@@ -49,6 +75,11 @@ function renderWorksList() {
             <span class="work-period">${w.period}</span>
           </div>
         `;
+        card.addEventListener('click', (e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+          e.preventDefault();
+          showWorkModal(w.id);
+        });
         grid.appendChild(card);
       });
   }

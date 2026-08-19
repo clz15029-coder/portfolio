@@ -34,3 +34,41 @@ document.querySelectorAll('.sidebar-nav a').forEach((link) => {
     link.classList.add('is-current');
   }
 });
+
+const detailModal = document.querySelector('[data-modal-panel]');
+const detailModalBackdrop = document.querySelector('[data-modal-backdrop]');
+const detailModalBody = document.querySelector('[data-modal-body]');
+const detailModalCloseBtn = document.querySelector('[data-modal-close]');
+
+function openDetailModal(html) {
+  if (!detailModal || !detailModalBackdrop || !detailModalBody) return;
+  detailModalBody.innerHTML = html;
+  detailModal.classList.add('is-open');
+  detailModalBackdrop.classList.add('is-open');
+  document.body.classList.add('modal-open');
+  detailModal.scrollTop = 0;
+}
+
+function closeDetailModal() {
+  if (!detailModal || !detailModalBackdrop) return;
+  detailModal.classList.remove('is-open');
+  detailModalBackdrop.classList.remove('is-open');
+  document.body.classList.remove('modal-open');
+}
+
+function handleModalDismiss() {
+  closeDetailModal();
+  if (typeof window.onDetailModalClose === 'function') {
+    window.onDetailModalClose();
+  }
+}
+
+if (detailModal && detailModalBackdrop) {
+  detailModalBackdrop.addEventListener('click', handleModalDismiss);
+  detailModalCloseBtn?.addEventListener('click', handleModalDismiss);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && detailModal.classList.contains('is-open')) {
+      handleModalDismiss();
+    }
+  });
+}

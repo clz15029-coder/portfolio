@@ -47,9 +47,11 @@
 - **角丸の囲い**: TOPページのヒーロー(`.hero-card`)、WORKSカードの画像枠(`.work-thumb`)など、写真・イラスト枠は大きめの角丸(20〜28px)で囲う
 - **カード** (`.card`, `.project-card`): 角丸は控えめ(4px)、境界線+薄いシャドウ。ホバーで4px浮き上がる
 - **ボタン** (`.button`): 塗りは黒(`--accent-strong`)、角は完全な丸型(pill)。ホバーで少し不透明度を下げつつ上に浮く
-- **フィルタピル** (`.filter-pill`): WORKS一覧のカテゴリ絞り込み。選択中/ホバーで黒塗りに反転
+- **フィルタピル** (`.filter-pill`): WORKS一覧のカテゴリ絞り込み。選択中/ホバーで黒塗りに反転。カテゴリはWEB/ロゴ/印刷物/バナー・グラフィック/個人制作/イラストの6種類(`js/works-list.js`の`CATEGORY_LABELS`)
 - **ナビゲーション**: 現在地のリンクは色の変化で示す(`.sidebar-nav a.is-current`)
 - **ページ内側の見出し** (`.page-header`): TOP以外の各ページ共通で使う、罫線区切りの小さめヒーロー
+- **作品詳細モーダル** (`.detail-modal` / `.detail-modal-backdrop`): WORKS一覧で作品カードをクリックすると、画面右から幅58vw(最大640px、モバイルは全幅)のパネルがスライドインして詳細を表示する「半分モーダル」形式。背景クリック・×ボタン・Escapeキーで閉じる。URLは`work-detail.html?id=`にpushStateで書き換わるため、直接アクセス・共有・リロード時はフルページ版(`work-detail.html`)が同じ内容を表示する
+- **作品詳細のレイアウト** (`.work-meta-list`, `.work-detail-link`): タイトル→タグ(カテゴリ+「Clientwork」)→説明文→Client/Scope/Yearのラベル・値リスト→区切り線→URLリンク、というコンパクトな構成に統一。フルページ版・モーダルの両方で`js/work-render.js`の`renderWorkDetailHTML()`を共通利用
 
 ## 今後の調整余地
 

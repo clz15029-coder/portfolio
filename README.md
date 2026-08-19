@@ -13,16 +13,16 @@
 ├── index.html            TOPページ
 ├── about.html             ABOUTページ
 ├── works.html             WORKS一覧ページ
-├── work-detail.html       WORKS詳細ページ(?id=で出し分け)
-├── personal-works.html    PERSONAL WORKSページ
+├── work-detail.html       WORKS詳細ページ(?id=で出し分け、直接アクセス用の完全版)
 ├── contact.html           CONTACTページ
 ├── css/
 │   └── styles.css         全ページ共通スタイル
 ├── js/
-│   ├── main.js             共通UI制御(サイドバー開閉など)
-│   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細に反映)
-│   ├── works-list.js       WORKS一覧ページの描画ロジック
-│   └── work-detail.js      WORKS詳細ページの描画ロジック
+│   ├── main.js             共通UI制御(サイドバー開閉、作品詳細モーダルの開閉)
+│   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細・モーダルに反映)
+│   ├── work-render.js      作品詳細の共通HTML生成(work-detail.htmlとモーダルの両方で使用)
+│   ├── works-list.js       WORKS一覧ページの描画・フィルタ・モーダル制御
+│   └── work-detail.js      WORKS詳細ページ(フルページ版)の描画ロジック
 ├── images/
 │   ├── profile/            プロフィール写真用(現状未挿入)
 │   ├── works/               作品画像用(現状未挿入)
@@ -58,6 +58,6 @@ python3 -m http.server 8000
 
 ## 作品データについて
 
-WORKS一覧・詳細ページは `js/works-data.js` の配列から自動生成されます。新しい作品の追加方法は [memo/作品の追加方法.md](memo/作品の追加方法.md) を参照してください。
+WORKS一覧・詳細ページ・詳細モーダルは、すべて `js/works-data.js` の配列から自動生成されます(個人制作・イラストも含め同じ仕組みで管理)。新しい作品の追加方法は [memo/作品の追加方法.md](memo/作品の追加方法.md) を参照してください。
 
-PERSONAL WORKSページ(`personal-works.html`)は`js/works-data.js`を使わず、HTMLに直接書く方式です。追加方法は [memo/作品の追加方法.md](memo/作品の追加方法.md) を参照してください。
+WORKS一覧ページで作品カードをクリックすると、画面右側からモーダルパネルで詳細が表示されます(ページ遷移なし、URLは`work-detail.html?id=`に更新されるため共有・直接アクセスも可能)。
