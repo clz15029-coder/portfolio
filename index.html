@@ -19,6 +19,7 @@
       <nav class="sidebar-nav">
         <a href="works.html">Works</a>
         <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="sidebar-social">
@@ -50,20 +51,7 @@
         <section class="section works-section">
           <h2>Works</h2>
           <p class="section-lead">コーポレートサイトを中心に、ロゴ・印刷物まで幅広く手がけています。</p>
-          <div class="card-list">
-            <article class="card">
-              <h3>WEB</h3>
-              <p>コーポレートサイト・サービスサイトの情報設計・UIデザインを担当。</p>
-            </article>
-            <article class="card">
-              <h3>ロゴ</h3>
-              <p>ヒアリングからロゴ制作、使用ガイドラインの整備までを担当。</p>
-            </article>
-            <article class="card">
-              <h3>印刷物</h3>
-              <p>採用パンフレットなど、紙媒体のデザイン・ビジュアル作成を担当。</p>
-            </article>
-          </div>
+          <div class="works-grid" data-top-works></div>
           <p class="section-footer"><a href="works.html" class="button secondary">作品一覧を見る</a></p>
         </section>
 
@@ -80,6 +68,10 @@
     </div>
   </div>
 
+  <script src="js/works-data.js"></script>
+  <script src="js/category-groups.js"></script>
+  <script src="js/work-render.js"></script>
+  <script src="js/top-works.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

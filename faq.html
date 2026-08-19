@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Works | ポートフォリオ</title>
+  <title>FAQ | ポートフォリオ</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -35,19 +35,24 @@
       </div>
 
       <main class="content">
-        <div class="works-title-row">
-          <h1>Works</h1>
-          <span class="works-count">-</span>
-        </div>
-        <p class="section-lead">これまでの制作実績です。カテゴリで絞り込みできます。</p>
+        <section class="page-header">
+          <p class="page-eyebrow">FAQ</p>
+          <h1>よくある質問</h1>
+        </section>
 
-        <div class="filter-pills"></div>
+        <!--
+          質問を追加するときは、下のテンプレートをコピーして
+          このコメントの下に貼り付け、中身を書き換えてください。
 
-        <div class="works-grid"></div>
+          <section class="work-detail-section">
+            <h2>Q. 質問文をここに書く</h2>
+            <p>A. 回答文をここに書く。</p>
+          </section>
+        -->
 
         <section class="coming-soon">
           <div class="placeholder-box">
-            <p>作品画像は準備中です。掲載する写真・スクリーンショットを差し替え次第、順次更新します。</p>
+            <p>FAQの内容は準備中です。よくいただくご質問を順次追加していきます。</p>
           </div>
         </section>
       </main>
@@ -58,16 +63,6 @@
     </div>
   </div>
 
-  <div class="detail-modal-backdrop" data-modal-backdrop></div>
-  <div class="detail-modal" data-modal-panel>
-    <button type="button" class="detail-modal-close" data-modal-close aria-label="閉じる">×</button>
-    <div class="detail-modal-body" data-modal-body></div>
-  </div>
-
-  <script src="js/works-data.js"></script>
-  <script src="js/category-groups.js"></script>
-  <script src="js/work-render.js"></script>
-  <script src="js/works-list.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

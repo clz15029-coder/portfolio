@@ -1,3 +1,16 @@
+function renderWorkCardHTML(work) {
+  return `
+    <div class="work-thumb">作品画像(準備中)</div>
+    <h3>${work.title}</h3>
+    <div class="work-card-meta">
+      <div class="work-tags">
+        ${work.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
+      </div>
+      <span class="work-period">${work.period}</span>
+    </div>
+  `;
+}
+
 function extractYearLabel(period) {
   const years = [...new Set((period.match(/\d{4}/g) || []))];
   return years.length ? years.join('-') : period;

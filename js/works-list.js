@@ -59,16 +59,7 @@ function renderWorksList() {
         const card = document.createElement('a');
         card.className = 'work-card';
         card.href = `work-detail.html?id=${w.id}`;
-        card.innerHTML = `
-          <div class="work-thumb">作品画像(準備中)</div>
-          <h3>${w.title}</h3>
-          <div class="work-card-meta">
-            <div class="work-tags">
-              ${w.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
-            </div>
-            <span class="work-period">${w.period}</span>
-          </div>
-        `;
+        card.innerHTML = renderWorkCardHTML(w);
         card.addEventListener('click', (e) => {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
           e.preventDefault();
