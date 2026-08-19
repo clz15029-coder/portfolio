@@ -42,8 +42,11 @@ function renderWorksList() {
         card.innerHTML = `
           <div class="work-thumb">作品画像(準備中)</div>
           <h3>${w.title}</h3>
-          <div class="work-tags">
-            ${w.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
+          <div class="work-card-meta">
+            <div class="work-tags">
+              ${w.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
+            </div>
+            <span class="work-period">${w.period}</span>
           </div>
         `;
         grid.appendChild(card);

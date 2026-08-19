@@ -66,6 +66,8 @@
 
 メモ: 2026-08-19、本番URL(https://clz15029-coder.github.io/portfolio/)に対して全7ページ・全CSS/JSアセットのHTTPステータスを確認、すべて200。相対パスも`/portfolio/`のサブディレクトリ配下で問題なく解決。大学時代の自己紹介文の削除・PERSONAL WORKS空化も本番に反映済みであることを確認。
 
+メモ: 2026-08-19、ユーザー提供のPDFポートフォリオ(杉山弥優＿制作実績＿最終版)を参照し、PERSONAL WORKSページに卒業制作(wan-idea、深掘り型)とイラスト制作(ライト型、使用ソフト：CLIP STUDIO PAINT / Adobe Photoshop CC)を復元。ライト型は`.light-works-grid`で横並び最大3つまでのグリッド表示に変更(CSS追加)。また、WORKS一覧ページのカードにも制作期間(`period`)をカテゴリタグの右側に表示するよう`js/works-list.js`とCSSを更新。
+
 ## スコープ外(今週やらないこと)
 - 実案件6〜10件の実データ、実写真、実プロセス資料
 - Notion手順化の実スクリーンショット、ABOUT本文・実写真
