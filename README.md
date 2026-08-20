@@ -14,18 +14,21 @@
 ├── about.html             ABOUTページ
 ├── works.html             WORKS一覧ページ
 ├── work-detail.html       WORKS詳細ページ(?id=で出し分け、直接アクセス用の完全版)
-├── faq.html               FAQページ(内容は準備中)
+├── faq.html               FAQページ(アコーディオン形式、Q1〜Q7)
+├── news.html              NEWSページ(お知らせ一覧)
 ├── contact.html           CONTACTページ
 ├── css/
 │   └── styles.css         全ページ共通スタイル
 ├── js/
-│   ├── main.js             共通UI制御(サイドバー開閉、作品詳細モーダルの開閉)
+│   ├── main.js             共通UI制御(サイドバー開閉、作品詳細モーダルの開閉、年齢自動計算)
 │   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細・モーダル・TOPページに反映)
 │   ├── category-groups.js  WORKSカテゴリの大分類3つ×小分類7つの定義
 │   ├── work-render.js      作品カード・作品詳細の共通HTML生成(一覧/詳細/モーダル/TOPページで共用)
 │   ├── works-list.js       WORKS一覧ページの描画・フィルタ(大分類→小分類)・モーダル制御
 │   ├── work-detail.js      WORKS詳細ページ(フルページ版)の描画ロジック
-│   └── top-works.js        TOPページのWorksセクション(大分類ごとに最大3件をランダム表示)
+│   ├── top-works.js        TOPページのWorksセクション(大分類ごとに最大3件をランダム表示)
+│   ├── hero-visual.js      TOPページMVの画像ランダム切り替え(3〜5秒間隔)
+│   └── faq.js               FAQアコーディオンの開閉制御
 ├── images/
 │   ├── profile/            プロフィール写真用(現状未挿入)
 │   ├── works/               作品画像用(現状未挿入)

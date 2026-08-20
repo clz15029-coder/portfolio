@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Works | ポートフォリオ</title>
+  <title>News | ポートフォリオ</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -36,21 +36,29 @@
       </div>
 
       <main class="content">
-        <div class="works-title-row">
-          <h1>Works</h1>
-          <span class="works-count">-</span>
-        </div>
-        <p class="section-lead">これまでの制作実績です。カテゴリで絞り込みできます。</p>
-
-        <div class="filter-pills"></div>
-
-        <div class="works-grid"></div>
-
-        <section class="coming-soon">
-          <div class="placeholder-box">
-            <p>作品画像は準備中です。掲載する写真・スクリーンショットを差し替え次第、順次更新します。</p>
-          </div>
+        <section class="page-header">
+          <p class="page-eyebrow">NEWS</p>
+          <h1>お知らせ</h1>
         </section>
+
+        <!--
+          お知らせを追加するときは、下のテンプレートをコピーして
+          .news-listの中(一番上、最新のものが上に来るように)に貼り付けてください。
+
+          <div class="news-item">
+            <span class="news-date">YYYY.MM.DD</span>
+            <h2>見出しをここに書く</h2>
+            <p>本文をここに書く。</p>
+          </div>
+        -->
+
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">2026.08.20</span>
+            <h2>ポートフォリオサイトを更新しました</h2>
+            <p>WORKS・ABOUT・FAQなど各ページを継続的に更新しています。今後も制作実績や記事を随時追加していきます。</p>
+          </div>
+        </div>
       </main>
 
       <footer class="site-footer">
@@ -59,16 +67,6 @@
     </div>
   </div>
 
-  <div class="detail-modal-backdrop" data-modal-backdrop></div>
-  <div class="detail-modal" data-modal-panel>
-    <button type="button" class="detail-modal-close" data-modal-close aria-label="閉じる">×</button>
-    <div class="detail-modal-body" data-modal-body></div>
-  </div>
-
-  <script src="js/works-data.js"></script>
-  <script src="js/category-groups.js"></script>
-  <script src="js/work-render.js"></script>
-  <script src="js/works-list.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
