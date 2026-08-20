@@ -958,10 +958,7 @@ body.modal-open {
 }
 
 .faq-answer {
-  display: grid;
-  grid-template-rows: 0fr;
-  visibility: hidden;
-  transition: grid-template-rows 0.3s ease, visibility 0s linear 0.3s;
+  display: none;
 }
 
 .faq-answer-inner {
@@ -980,9 +977,7 @@ body.modal-open {
 }
 
 .faq-item.is-open .faq-answer {
-  grid-template-rows: 1fr;
-  visibility: visible;
-  transition: grid-template-rows 0.3s ease;
+  display: block;
 }
 
 /* ===== NEWS(FAQと同じ.faq-item部品を再利用) ===== */
