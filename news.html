@@ -43,20 +43,39 @@
 
         <!--
           お知らせを追加するときは、下のテンプレートをコピーして
-          .news-listの中(一番上、最新のものが上に来るように)に貼り付けてください。
+          .faq-listの中(一番上、最新のものが上に来るように)に貼り付けてください。
+          FAQページと同じ部品(.faq-item等)を使っているので、クリックで開閉します。
 
-          <div class="news-item">
-            <span class="news-date">YYYY.MM.DD</span>
-            <h2>見出しをここに書く</h2>
-            <p>本文をここに書く。</p>
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">
+                <span class="news-date">YYYY.MM.DD</span>
+                <span>見出しをここに書く</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>本文をここに書く。</p>
+              </div>
+            </div>
           </div>
         -->
 
-        <div class="news-list">
-          <div class="news-item">
-            <span class="news-date">2026.08.20</span>
-            <h2>ポートフォリオサイトを更新しました</h2>
-            <p>WORKS・ABOUT・FAQなど各ページを継続的に更新しています。今後も制作実績や記事を随時追加していきます。</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">
+                <span class="news-date">2026.08.20</span>
+                <span>ポートフォリオサイトを更新しました</span>
+              </span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>WORKS・ABOUT・FAQなど各ページを継続的に更新しています。今後も制作実績や記事を随時追加していきます。</p>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -67,6 +86,7 @@
     </div>
   </div>
 
+  <script src="js/faq.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
