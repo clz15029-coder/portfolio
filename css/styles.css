@@ -199,88 +199,132 @@ button {
   text-align: center;
 }
 
-/* 作品カルーセル(参考: shunsukesatake.com のp-top__mv) */
+/* MV(参考: shunsukesatake.com のp-top__mv。1枚のビジュアル+情報+次のプレビュー) */
 
-.hero-carousel {
-  width: 100%;
-  max-width: 720px;
-  overflow: hidden;
-}
-
-.hero-carousel-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-.hero-carousel-nav {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.hero-carousel-nav:hover {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: #fff;
-}
-
-.hero-carousel-counter {
-  margin: 0;
-  min-width: 64px;
-  font-size: 0.85rem;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-}
-
-.hero-carousel-track {
-  display: flex;
-  gap: 1.25rem;
-  transition: transform 0.4s ease;
-}
-
-.hero-carousel-item {
-  flex: 0 0 auto;
-  width: min(220px, 60vw);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: inherit;
-  text-align: left;
-}
-
-.hero-carousel-item img {
+.hero-mv {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 20px;
+  overflow: hidden;
+  background: var(--canvas);
+}
+
+.hero-mv-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hero-mv-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.25s ease;
 }
 
-.hero-carousel-item:hover img {
-  transform: translateY(-4px);
+.hero-mv-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
 
-.hero-carousel-item-title {
-  font-size: 0.85rem;
+.hero-mv-info {
+  position: absolute;
+  left: 1.75rem;
+  right: 7.5rem;
+  bottom: 1.5rem;
+  text-align: left;
+  color: #fff;
+}
+
+.hero-mv-info-title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-.hero-carousel-item-tag {
-  font-size: 0.72rem;
-  color: var(--muted);
+.hero-mv-info-tag {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.hero-mv-progress {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+}
+
+.hero-mv-progress-bar {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  border-radius: inherit;
+}
+
+.hero-mv-progress-bar.is-playing {
+  animation: hero-mv-progress 5s linear forwards;
+}
+
+@keyframes hero-mv-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hero-mv-next {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 92px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--canvas);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.hero-mv-next:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.hero-mv-next-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-mv-next-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.25rem 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .hero-caption-top {
@@ -889,17 +933,30 @@ button {
     margin: 0 0 0.5rem;
   }
 
-  .hero-carousel-item {
-    width: min(160px, 55vw);
+  .hero-mv-info {
+    left: 1.1rem;
+    right: 5.25rem;
+    bottom: 1rem;
   }
 
-  .hero-carousel-track {
-    gap: 0.75rem;
+  .hero-mv-info-title {
+    font-size: 0.95rem;
   }
 
-  .hero-carousel-nav {
-    width: 34px;
-    height: 34px;
+  .hero-mv-progress {
+    left: 1.1rem;
+    right: 1.1rem;
+    top: 0.85rem;
+  }
+
+  .hero-mv-next {
+    width: 68px;
+    right: 0.85rem;
+    bottom: 0.85rem;
+  }
+
+  .hero-mv-next-label {
+    font-size: 0.55rem;
   }
 
   .page-header,

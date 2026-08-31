@@ -27,11 +27,11 @@
 │   ├── works-list.js       WORKS一覧ページの描画・フィルタ(大分類→小分類)・モーダル制御
 │   ├── work-detail.js      WORKS詳細ページ(フルページ版)の描画ロジック
 │   ├── top-works.js        TOPページのWorksセクション(大分類ごとに最大3件をランダム表示)
-│   ├── hero-visual.js      TOPページMVの画像ランダム切り替え(3〜5秒間隔)
+│   ├── hero-visual.js      TOPページMV(1枚のビジュアル+情報+次のプレビュー、5秒ごとに自動送り)
 │   └── faq.js               FAQアコーディオンの開閉制御
 ├── images/
 │   ├── profile/            プロフィール写真用(現状未挿入)
-│   ├── works/               作品画像用(現状未挿入)
+│   ├── works/               作品画像用(01.jpg〜12.jpgを配置済み)
 │   └── ui/                  その他UI素材用(現状未挿入)
 ├── README.md              このファイル
 ├── CLAUDE.md              Claude Codeとの作業ルール(自動読み込みのためルート固定)

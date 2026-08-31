@@ -1,88 +1,87 @@
 /*
-  TOPページMVの.hero-carouselに、worksDataの全作品(imagesが1枚以上ある作品のみ)を
-  横並びのカードとして並べるカルーセル。
-  ・矢印クリックで1枚ずつ前後に移動(末尾/先頭でループ)
-  ・3〜5秒ごとに自動で次のカードへ進む
-  ・カードをクリックすると work-detail.html?id=... に遷移
-  参考: https://shunsukesatake.com/ のp-top__mv(横並びカルーセル+矢印+ページ番号)
+  TOPページMVの.hero-mvに、worksData(imagesが1枚以上ある作品のみ)を1件ずつ
+  画面いっぱいに表示する。
+  ・下部に黒グラデーション+白文字で作品タイトル/カテゴリタグを表示
+  ・右下に次の作品のプレビューがあり、クリックすると次に進む
+  ・上部の細いバーが5秒かけて伸び、経過を示す(伸びきると自動で次に進む)
+  ・メイン画像をクリックするとその作品の詳細ページに遷移する
+  参考: https://shunsukesatake.com/ のp-top__mv(1枚のビジュアル+情報+次のプレビュー)
 */
-function getHeroCarouselWorks() {
+const HERO_MV_INTERVAL = 5000;
+
+function getHeroMvWorks() {
   if (typeof worksData === 'undefined') return [];
   return worksData.filter((w) => w.images && w.images.length);
 }
 
-function renderHeroCarouselItemHTML(work) {
-  const tag = work.tags && work.tags[0] ? work.tags[0] : '';
-  return `
-    <a class="hero-carousel-item" href="work-detail.html?id=${work.id}">
-      <img src="${work.images[0]}" alt="${work.title}" loading="lazy">
-      <span class="hero-carousel-item-title">${work.title}</span>
-      ${tag ? `<span class="hero-carousel-item-tag">${tag}</span>` : ''}
+function initHeroMv() {
+  const root = document.querySelector('.hero-mv');
+  if (!root) return;
+
+  const works = getHeroMvWorks();
+  if (!works.length) return;
+
+  root.innerHTML = `
+    <a class="hero-mv-link" href="">
+      <img class="hero-mv-img" src="" alt="">
+      <div class="hero-mv-overlay"></div>
+      <div class="hero-mv-info">
+        <p class="hero-mv-info-title"></p>
+        <p class="hero-mv-info-tag"></p>
+      </div>
     </a>
+    <div class="hero-mv-progress"><span class="hero-mv-progress-bar"></span></div>
+    <button type="button" class="hero-mv-next" aria-label="次の作品">
+      <img class="hero-mv-next-img" src="" alt="">
+      <span class="hero-mv-next-label">Next</span>
+    </button>
   `;
-}
 
-function initHeroCarousel() {
-  const root = document.querySelector('.hero-carousel');
-  const track = document.querySelector('.hero-carousel-track');
-  if (!root || !track) return;
-
-  const works = getHeroCarouselWorks();
-  if (!works.length) {
-    root.remove();
-    return;
-  }
-
-  track.innerHTML = works.map(renderHeroCarouselItemHTML).join('');
-
-  const items = track.querySelectorAll('.hero-carousel-item');
-  const prevBtn = root.querySelector('.hero-carousel-nav.is-prev');
-  const nextBtn = root.querySelector('.hero-carousel-nav.is-next');
-  const currentEl = root.querySelector('.hero-carousel-counter .current');
-  const totalEl = root.querySelector('.hero-carousel-counter .total');
-
-  totalEl.textContent = String(works.length).padStart(2, '0');
+  const link = root.querySelector('.hero-mv-link');
+  const img = root.querySelector('.hero-mv-img');
+  const titleEl = root.querySelector('.hero-mv-info-title');
+  const tagEl = root.querySelector('.hero-mv-info-tag');
+  const progressBar = root.querySelector('.hero-mv-progress-bar');
+  const nextBtn = root.querySelector('.hero-mv-next');
+  const nextImg = root.querySelector('.hero-mv-next-img');
 
   let index = 0;
   let timer = null;
 
-  function update() {
-    const item = items[index];
-    // hero-cardがposition:relativeなので、offsetLeftはtrack起点ではなくhero-card起点になる。
-    // trackのoffsetLeftを引いて、track内での相対位置に補正する。
-    const offset = item.offsetLeft - track.offsetLeft;
-    track.style.transform = `translateX(-${offset}px)`;
-    currentEl.textContent = String(index + 1).padStart(2, '0');
+  function render() {
+    const work = works[index];
+    const nextWork = works[(index + 1) % works.length];
+
+    link.href = `work-detail.html?id=${work.id}`;
+    img.src = work.images[0];
+    img.alt = work.title;
+    titleEl.textContent = work.title;
+    tagEl.textContent = (work.tags && work.tags[0]) || '';
+
+    nextImg.src = nextWork.images[0];
+    nextImg.alt = nextWork.title;
+
+    // アニメーションを最初からやり直すため、一度クラスを外してreflowさせてから戻す
+    progressBar.classList.remove('is-playing');
+    void progressBar.offsetWidth;
+    progressBar.classList.add('is-playing');
   }
 
-  function goTo(newIndex) {
-    index = (newIndex + works.length) % works.length;
-    update();
+  function goToNext() {
+    index = (index + 1) % works.length;
+    render();
+    scheduleNext();
   }
 
-  function scheduleAutoAdvance() {
+  function scheduleNext() {
     clearTimeout(timer);
-    const delay = 3000 + Math.random() * 2000;
-    timer = window.setTimeout(() => {
-      goTo(index + 1);
-      scheduleAutoAdvance();
-    }, delay);
+    timer = window.setTimeout(goToNext, HERO_MV_INTERVAL);
   }
 
-  prevBtn.addEventListener('click', () => {
-    goTo(index - 1);
-    scheduleAutoAdvance();
-  });
+  nextBtn.addEventListener('click', goToNext);
 
-  nextBtn.addEventListener('click', () => {
-    goTo(index + 1);
-    scheduleAutoAdvance();
-  });
-
-  window.addEventListener('resize', update);
-
-  update();
-  scheduleAutoAdvance();
+  render();
+  scheduleNext();
 }
 
-initHeroCarousel();
+initHeroMv();

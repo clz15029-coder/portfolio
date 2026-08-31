@@ -57,7 +57,13 @@
 - **FAQアコーディオン** (`.faq-item`, `.faq-question`, `.faq-answer`): 質問行(角丸16px・枠線・白背景)をクリックすると回答が開閉する。右側の「＋」アイコンは開くと縦棒が縮んで「−」になる(色は`--text`のみ、有彩色なし)。開閉は`.faq-answer { display: none; }` / `.faq-item.is-open .faq-answer { display: block; }` のシンプルな切り替え(`js/faq.js`は`.is-open`クラスの付け替えのみ)。以前は`grid-template-rows`のトランジションで高さ0にする方式だったが、閉じているのに完全に非表示になっていないという指摘を受け、確実性を優先して`display:none`方式に変更(開閉アニメーションは無くなった)。`.faq-list`は他の本文(`.work-detail-section > p`等)と同じ`max-width: 720px`に揃えている。参考サイト(morohoshi.site)のNewsセクションのアコーディオンを踏襲する想定だが、環境上ブラウザで実際の見た目を確認できなかったため、既存のモノトーン角丸デザインに合わせた標準的な実装にしている
 - **プロフィール画像枠** (`.profile-photo`): ABOUTページの見出し直下に置く、160×160pxの正方形・角丸20pxのプレースホルダー。`.work-thumb`と同じ`--canvas`背景を使い、画像未挿入時は「プロフィール画像(準備中)」を表示する
 - **モバイルサイドバー**: ハンバーガーメニューをタップした時、画面右からスライドインする(`.sidebar`の`transform: translateX(100%)`→`.is-open`で`translateX(0)`)。以前は左からだったが、ユーザーの意向で右からに変更(2026-08-20)
-- **MVの作品カルーセル** (`.hero-carousel`): TOPページのMV内、`worksData`のうち`images`が1枚以上ある作品を横並びのカードとして並べるカルーセル(`js/hero-visual.js`)。参考サイト(https://shunsukesatake.com/ のp-top__mv)を踏襲し、前へ/次へ矢印(`.hero-carousel-nav`)+現在位置/総数のページャー(`.hero-carousel-counter`、例: `01 / 12`)を上部に配置。各カードは画像(4:3、`object-fit: cover`)+作品タイトル+カテゴリタグ(`work.tags[0]`)を表示し、クリックすると`work-detail.html?id=...`に遷移する。3〜5秒ごとに自動で次のカードへ進む(矢印クリック時はタイマーをリセット)。外側の`.hero-card`(角丸28px・padding 3.5rem 2rem)の見た目は変更せず、内側の`.hero-visual`(単一画像・4:5縦長)を`.hero-carousel`に置き換える形で実装した(`min-height: 420px`は新レイアウトに合わせて撤廃)
+- **MV** (`.hero-mv`): TOPページのMV内、`worksData`のうち`images`が1枚以上ある作品を1件ずつ画面いっぱいに表示する(`js/hero-visual.js`)。参考サイト(https://shunsukesatake.com/ のp-top__mv)の見た目(1枚のビジュアルが画面いっぱいに広がり、下部に黒グラデーション+白文字の作品情報、右下に次の作品の小さなプレビュー)を踏襲。
+  - `.hero-mv`は`.hero-card`の内側で幅いっぱい(aspect-ratio 4/3、実際の作品サムネイル画像の比率に合わせている)を使い、画像がカード全体を大きく占める
+  - 下部に黒→透明のグラデーション(`.hero-mv-overlay`)+白文字でタイトル・カテゴリタグ(`.hero-mv-info`)
+  - 上部に細いプログレスバー(`.hero-mv-progress`)があり、5秒かけて伸びて経過を示し、伸びきると自動的に次の作品に切り替わる(CSSの`@keyframes`アニメーションとJSの`setTimeout`を同じ5秒に揃えている)
+  - 右下に次の作品の小さなプレビュー(`.hero-mv-next`、4:3の小さな画像+「Next」ラベル)があり、クリックすると次の作品に進む(戻る操作は無し、進むだけの一方向)
+  - メイン画像をクリックするとその作品の詳細ページ(`work-detail.html?id=...`)に遷移する
+  - 外側の`.hero-card`(角丸28px・padding 3.5rem 2rem)の見た目は変更していない(`min-height: 420px`は新レイアウトに合わせて撤廃)
 - **NEWSページ**: FAQと同じアコーディオン部品(`.faq-list`/`.faq-item`/`.faq-question`/`.faq-answer`)をそのまま再利用。質問行の代わりに日付(`.news-date`)+見出しをクリックすると本文が開く。`js/faq.js`はクラス名ベースの汎用実装のため、`news.html`でもそのまま読み込むだけで動作する
 
 ## 今後の調整余地
