@@ -35,5 +35,6 @@ function scheduleNextSwap() {
 }
 
 if (document.querySelector('.hero-visual')) {
+  swapHeroVisual();
   scheduleNextSwap();
 }
