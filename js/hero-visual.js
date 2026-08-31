@@ -1,8 +1,8 @@
 /*
   TOPページMVの.hero-visualに、worksDataから1件ランダムに選んで表示する。
   3〜5秒間隔でランダムに次の作品へ切り替わる。
-  work.imageがあれば画像を表示、無ければタイトルをテキストで表示する
-  (images/works/に実画像を用意し、works-data.jsにimageフィールドを追記すれば
+  work.imagesの1枚目があれば画像を表示、無ければタイトルをテキストで表示する
+  (images/works/に実画像を用意し、works-data.jsのimages配列にパスを追記すれば
   自動的に画像表示に切り替わる)。
 */
 function pickRandomWork() {
@@ -15,10 +15,12 @@ function swapHeroVisual() {
   const work = pickRandomWork();
   if (!el || !work) return;
 
+  const image = work.images && work.images[0];
+
   el.classList.add('is-fading');
   window.setTimeout(() => {
-    el.innerHTML = work.image
-      ? `<img src="${work.image}" alt="${work.title}" />`
+    el.innerHTML = image
+      ? `<img src="${image}" alt="${work.title}" />`
       : `<span>${work.title}</span>`;
     el.classList.remove('is-fading');
   }, 400);

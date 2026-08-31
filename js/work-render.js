@@ -1,6 +1,11 @@
 function renderWorkCardHTML(work) {
+  const thumbHTML =
+    work.images && work.images.length
+      ? `<img src="${work.images[0]}" alt="${work.title}" loading="lazy">`
+      : '作品画像(準備中)';
+
   return `
-    <div class="work-thumb">作品画像(準備中)</div>
+    <div class="work-thumb">${thumbHTML}</div>
     <h3>${work.title}</h3>
     <div class="work-card-meta">
       <div class="work-tags">
@@ -20,6 +25,18 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
   const linkIcon =
     '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
 
+  const images = work.images || [];
+  const galleryHTML =
+    images.length > 1
+      ? `<div class="work-gallery">${images
+          .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
+          .join('')}</div>`
+      : `<div class="work-thumb work-detail-thumb">${
+          images.length === 1
+            ? `<img src="${images[0]}" alt="${work.title}" loading="lazy">`
+            : '作品画像(準備中)'
+        }</div>`;
+
   return `
     <p class="page-eyebrow">WORKS 詳細</p>
     <h1>${work.title}</h1>
@@ -28,7 +45,7 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
       <span class="work-tag">Clientwork</span>
     </div>
 
-    <div class="work-thumb work-detail-thumb">作品画像(準備中)</div>
+    ${galleryHTML}
 
     <div class="work-detail-section">
       <p>${work.summary}</p>
