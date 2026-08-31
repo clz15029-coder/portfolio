@@ -5,6 +5,7 @@
 ## 参考サイト
 
 - https://morohoshi.site/ (Shizuku Morohoshi氏のポートフォリオ、STUDIOで制作)
+- https://shunsukesatake.com/ (Shunsuke Satake氏のポートフォリオ)。トップMVの`p-top__mv`(大きな背景＋作品サムネイルが横並びで並ぶカルーセル、前へ/次へ矢印・ページャー・各サムネイルにタイトル)を参考に、TOPページMVの作品カルーセル(2026-08-31)に採用
 - 確認できた特徴:
   - 配色はほぼ完全なグレースケール(黒〜白の細かい階調)で、アクセントカラーは控えめ
   - 見出し・本文ともに明朝体(セリフ)は使わずゴシック(サンセリフ)で統一。日本語見出しには有料フォント「A1ゴシック」を使用
@@ -56,7 +57,7 @@
 - **FAQアコーディオン** (`.faq-item`, `.faq-question`, `.faq-answer`): 質問行(角丸16px・枠線・白背景)をクリックすると回答が開閉する。右側の「＋」アイコンは開くと縦棒が縮んで「−」になる(色は`--text`のみ、有彩色なし)。開閉は`.faq-answer { display: none; }` / `.faq-item.is-open .faq-answer { display: block; }` のシンプルな切り替え(`js/faq.js`は`.is-open`クラスの付け替えのみ)。以前は`grid-template-rows`のトランジションで高さ0にする方式だったが、閉じているのに完全に非表示になっていないという指摘を受け、確実性を優先して`display:none`方式に変更(開閉アニメーションは無くなった)。`.faq-list`は他の本文(`.work-detail-section > p`等)と同じ`max-width: 720px`に揃えている。参考サイト(morohoshi.site)のNewsセクションのアコーディオンを踏襲する想定だが、環境上ブラウザで実際の見た目を確認できなかったため、既存のモノトーン角丸デザインに合わせた標準的な実装にしている
 - **プロフィール画像枠** (`.profile-photo`): ABOUTページの見出し直下に置く、160×160pxの正方形・角丸20pxのプレースホルダー。`.work-thumb`と同じ`--canvas`背景を使い、画像未挿入時は「プロフィール画像(準備中)」を表示する
 - **モバイルサイドバー**: ハンバーガーメニューをタップした時、画面右からスライドインする(`.sidebar`の`transform: translateX(100%)`→`.is-open`で`translateX(0)`)。以前は左からだったが、ユーザーの意向で右からに変更(2026-08-20)
-- **MVのランダム画像切り替え** (`.hero-visual`): TOPページのMV内、`worksData`からランダムに1件選んで3〜5秒間隔で切り替え表示する(`js/hero-visual.js`)。各作品に`image`フィールドがあれば画像(`object-fit: cover`)、無ければタイトルのテキスト表示にフォールバックする。切り替え時は`opacity`のフェードトランジション
+- **MVの作品カルーセル** (`.hero-carousel`): TOPページのMV内、`worksData`のうち`images`が1枚以上ある作品を横並びのカードとして並べるカルーセル(`js/hero-visual.js`)。参考サイト(https://shunsukesatake.com/ のp-top__mv)を踏襲し、前へ/次へ矢印(`.hero-carousel-nav`)+現在位置/総数のページャー(`.hero-carousel-counter`、例: `01 / 12`)を上部に配置。各カードは画像(4:3、`object-fit: cover`)+作品タイトル+カテゴリタグ(`work.tags[0]`)を表示し、クリックすると`work-detail.html?id=...`に遷移する。3〜5秒ごとに自動で次のカードへ進む(矢印クリック時はタイマーをリセット)。外側の`.hero-card`(角丸28px・padding 3.5rem 2rem)の見た目は変更せず、内側の`.hero-visual`(単一画像・4:5縦長)を`.hero-carousel`に置き換える形で実装した(`min-height: 420px`は新レイアウトに合わせて撤廃)
 - **NEWSページ**: FAQと同じアコーディオン部品(`.faq-list`/`.faq-item`/`.faq-question`/`.faq-answer`)をそのまま再利用。質問行の代わりに日付(`.news-date`)+見出しをクリックすると本文が開く。`js/faq.js`はクラス名ベースの汎用実装のため、`news.html`でもそのまま読み込むだけで動作する
 
 ## 今後の調整余地
