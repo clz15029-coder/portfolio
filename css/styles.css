@@ -190,20 +190,28 @@ button {
   border-radius: 28px;
   padding: 3.5rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   position: relative;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
+}
+
+.hero-caption-column {
+  flex: 0 0 auto;
+  width: min(220px, 28%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* MV(参考: shunsukesatake.com のp-top__mv。1枚のビジュアル+情報+次のプレビュー) */
 
 .hero-mv {
   position: relative;
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
   aspect-ratio: 4 / 3;
   border-radius: 20px;
   overflow: hidden;
@@ -328,9 +336,6 @@ button {
 }
 
 .hero-caption-top {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   letter-spacing: 0.03em;
   color: var(--muted);
   font-size: 0.9rem;
@@ -338,21 +343,15 @@ button {
 }
 
 .hero-caption-side {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.03em;
   color: var(--muted);
   line-height: 1.7;
   font-size: 0.9rem;
+  margin: 0;
 }
 
 .hero-caption-bottom {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
   color: var(--muted);
   font-size: 0.8rem;
   letter-spacing: 0.12em;
@@ -917,22 +916,26 @@ button {
   .site-footer {
     padding: 1.5rem 1.25rem;
   }
+
+  .hero-card {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .hero-caption-column {
+    display: none;
+  }
+
+  .hero-mv {
+    width: 100%;
+    border-radius: inherit;
+  }
 }
 
 /* スマホサイズ */
 
 @media (max-width: 560px) {
-  .hero-card {
-    padding: 2.5rem 1.25rem;
-  }
-
-  .hero-caption-top,
-  .hero-caption-side {
-    position: static;
-    text-align: center;
-    margin: 0 0 0.5rem;
-  }
-
   .hero-mv-info {
     left: 1.1rem;
     right: 5.25rem;

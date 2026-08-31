@@ -63,7 +63,8 @@
   - 上部に細いプログレスバー(`.hero-mv-progress`)があり、5秒かけて伸びて経過を示し、伸びきると自動的に次の作品に切り替わる(CSSの`@keyframes`アニメーションとJSの`setTimeout`を同じ5秒に揃えている)
   - 右下に次の作品の小さなプレビュー(`.hero-mv-next`、4:3の小さな画像+「Next」ラベル)があり、クリックすると次の作品に進む(戻る操作は無し、進むだけの一方向)
   - メイン画像をクリックするとその作品の詳細ページ(`work-detail.html?id=...`)に遷移する
-  - 外側の`.hero-card`(角丸28px・padding 3.5rem 2rem)の見た目は変更していない(`min-height: 420px`は新レイアウトに合わせて撤廃)
+  - **PC(881px以上)**: `.hero-card`は横並び(`flex-direction: row`)。左に`.hero-caption-column`(名前・肩書き・「Portfolio 2026~」を縦積みしたキャプション、幅は`min(220px, 28%)`)、右に`.hero-mv`が残り幅いっぱいを使う2カラム構成。`.hero-card`自体の角丸28px・padding 3.5rem 2remは変更していない
+  - **SP(880px以下)**: `.hero-caption-column`は非表示(`display: none`)にして`.hero-mv`のみを表示。`.hero-card`の`padding`も0にして`.hero-mv`が縁いっぱいに広がるようにする(この時`.hero-mv`の角丸は`border-radius: inherit`で`.hero-card`の28pxに合わせている)
 - **NEWSページ**: FAQと同じアコーディオン部品(`.faq-list`/`.faq-item`/`.faq-question`/`.faq-answer`)をそのまま再利用。質問行の代わりに日付(`.news-date`)+見出しをクリックすると本文が開く。`js/faq.js`はクラス名ベースの汎用実装のため、`news.html`でもそのまま読み込むだけで動作する
 
 ## 今後の調整余地
