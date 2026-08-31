@@ -212,6 +212,7 @@ button {
   position: relative;
   flex: 1 1 auto;
   min-width: 0;
+  max-width: 600px;
   aspect-ratio: 4 / 3;
   border-radius: 20px;
   overflow: hidden;
@@ -929,6 +930,7 @@ button {
 
   .hero-mv {
     width: 100%;
+    max-width: none;
     border-radius: inherit;
   }
 }
