@@ -54,7 +54,7 @@ const worksData = [
     tags: ['ロゴ・シンボルマーク'],
     period: '2025年2月〜4月',
     role: 'ヒアリング設計、デザイン、ビジュアル作成、ガイドライン制作',
-    url: '',
+    url: 'https://shibasetsu.co.jp/',
     images: ['images/works/03.jpg'],
     summary: '会社としてロゴ制作の受注実績が少なく、クオリティと工数のバランスに課題があったため、まず制作フローそのものを整えることから着手した案件。柴田設備のロゴ制作からコーポレートサイト制作までを担当した。',
     points: [
@@ -127,8 +127,12 @@ const worksData = [
     role: 'デザイン',
     url: 'https://cf-for2.co.jp/',
     images: ['images/works/07.jpg'],
-    summary: '鋳物専門商社「CF FOR TWO」のコーポレートサイト(2024年)・採用サイト(2025年)制作を担当。詳細は本人未回収のため、別の機会に内容を追記予定。',
-    points: [],
+    summary: '鋳物専門商社「CF FOR TWO」のコーポレートサイト(2024年)・採用サイト(2025年)制作を担当。',
+    points: [
+      'コーポレートサイト(2024年)は、ディレクターから受け取った大枠のページ構成をベースに、追加すべきページの要否などを柔軟に協議しながら構成を調整。「商社の仕事は具体的にイメージされにくい」という課題に対し、世界を舞台に活動するスタイリッシュな企業イメージをビジュアルで表現した。',
+      '採用サイト(2025年)は、コーポレートサイトの評判が良かったことから社内コンペに参加し、2社の中から採用された案件。ディレクターから受け取ったイメージ(社内の「みんなが集まる」温かい雰囲気を伝えたい)をもとに、具体的な情報設計を担当した。',
+      '商社という業種は具体的な業務内容がイメージしづらいため、「世界を飛び回るような」洗練された世界観を軸に据え、堅さと今っぽさを両立するデザインを意識。採用サイトでは、社内の空気感や人となりが求職者に伝わるよう、社員の写真を多用する構成を選択した。ディレクターから受け取った方向性を土台にしつつ、ページ構成や見せ方については提案・調整を重ねる進め方を取った。'
+    ],
     process: []
   },
   {
@@ -211,6 +215,48 @@ const worksData = [
     role: 'XXXX(要変更)',
     url: '',
     images: ['images/works/12.jpg'],
+    summary: 'XXXX(要変更)',
+    points: [],
+    process: []
+  },
+  {
+    id: '13',
+    title: 'いちごプラザ サービスサイト制作',
+    client: 'いちごプラザ',
+    category: 'web-site',
+    tags: ['Webサイト / LP'],
+    period: 'XXXX(要変更)',
+    role: 'XXXX(要変更)',
+    url: 'https://15plaza.com/',
+    images: [],
+    summary: 'XXXX(要変更)',
+    points: [],
+    process: []
+  },
+  {
+    id: '14',
+    title: 'KDDI Hall サイト制作',
+    client: 'KDDI株式会社',
+    category: 'web-site',
+    tags: ['Webサイト / LP'],
+    period: 'XXXX(要変更)',
+    role: 'XXXX(要変更)',
+    url: 'https://kddihall.kddi.com/',
+    images: [],
+    summary: 'XXXX(要変更)',
+    points: [],
+    process: []
+  },
+  {
+    id: '15',
+    title: '福興産業 コーポレートサイト制作',
+    client: '福興産業株式会社',
+    category: 'web-site',
+    tags: ['Webサイト / LP'],
+    period: 'XXXX(要変更)',
+    role: 'XXXX(要変更)',
+    url: 'https://fukukou.co.jp/',
+    images: [],
     summary: 'XXXX(要変更)',
     points: [],
     process: []
