@@ -172,9 +172,9 @@ const worksData = [
     client: '現職(社名非公開)',
     category: 'web-site',
     tags: ['Webサイト / LP'],
-    period: '',
+    period: '2026年',
     role: 'ビジュアル設計・改修',
-    url: '',
+    url: 'https://pharmacist.m3.com/lp/youth',
     images: ['images/works/10.jpg'],
     summary: '若手薬剤師向け転職サービスのLP制作・改修。ターゲットを明確に絞り込み、「ぱっと見で若手向けとわかること」「広告感を出さないこと」を意識してデザインした。公開後、想定よりPV・CVが伸びなかったため、データをもとに改修も行った。',
     points: [
