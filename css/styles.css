@@ -552,6 +552,12 @@ button {
   margin-bottom: 2rem;
 }
 
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ===== WORKS詳細 ===== */
 
 .work-detail-summary {
