@@ -15,6 +15,13 @@
   --waku-color-neutral-32:#ADADAD;
   --waku-color-neutral-68:#525252;
   --waku-color-neutral-84:#292929;
+  --waku-color-green-3:#F7FFF7;
+  --waku-color-green-5:#F2FFF2;
+  --waku-color-green-9:#E8FFE8;
+  --waku-color-green-14:#DBFFDB;
+  --waku-color-green-32:#ADFFAD;
+  --waku-color-green-68:#52FF52;
+  --waku-color-green-84:#29FF29;
   /* 色：セマンティクス（意味の名前。使うのはこっち） */
   --waku-surface-primary:var(--waku-color-white);
   --waku-surface-secondary:var(--waku-color-neutral-3);
