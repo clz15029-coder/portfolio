@@ -8,15 +8,19 @@
   --waku-color-white:#FFFFFF;
   --waku-color-black:#000000;
   --waku-color-green:#00FF00;
-  --waku-color-gray-50:#F7F7F7;
-  --waku-color-gray-200:#E0E0E0;
-  --waku-color-gray-500:#757575;
+  --waku-color-neutral-3:#F7F7F7;
+  --waku-color-neutral-5:#F2F2F2;
+  --waku-color-neutral-9:#E8E8E8;
+  --waku-color-neutral-14:#DBDBDB;
+  --waku-color-neutral-32:#ADADAD;
+  --waku-color-neutral-68:#525252;
+  --waku-color-neutral-84:#292929;
   /* 色：セマンティクス（意味の名前。使うのはこっち） */
   --waku-surface-primary:var(--waku-color-white);
-  --waku-surface-secondary:var(--waku-color-gray-50);
+  --waku-surface-secondary:var(--waku-color-neutral-3);
   --waku-text-primary:var(--waku-color-black);
-  --waku-text-secondary:var(--waku-color-gray-500);
-  --waku-border-default:var(--waku-color-gray-200);
+  --waku-text-secondary:var(--waku-color-neutral-68);
+  --waku-border-default:var(--waku-color-neutral-14);
   --waku-border-strong:var(--waku-color-black);
   --waku-accent:var(--waku-color-green);
   /* 文字 */
