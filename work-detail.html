@@ -5,43 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Works 詳細 | ポートフォリオ</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <a href="index.html" class="sidebar-profile">
-        <span class="avatar">M</span>
-        <span>
-          <p class="sidebar-role">Designer</p>
-          <p class="sidebar-name">杉山弥優</p>
-        </span>
-      </a>
-      <nav class="sidebar-nav">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-dot" aria-hidden="true"></span>Miyu Sugiyama</a>
+      <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="works.html"><span class="dot" aria-hidden="true"></span>Works</a>
+        <a href="about.html"><span class="dot" aria-hidden="true"></span>About</a>
+        <a href="faq.html"><span class="dot" aria-hidden="true"></span>FAQ</a>
+        <a href="news.html"><span class="dot" aria-hidden="true"></span>News</a>
+        <a href="contact.html"><span class="dot" aria-hidden="true"></span>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content work-detail"></main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="logo">Miyu Sugiyama</div>
+      <nav class="foot-nav">
         <a href="works.html">Works</a>
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
         <a href="news.html">News</a>
         <a href="contact.html">Contact</a>
-      </nav>
-      <div class="sidebar-social">
         <a href="https://www.instagram.com/illustrate_sugiyama/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </aside>
-    <div class="sidebar-overlay"></div>
-
-    <div class="main-column">
-      <div class="mobile-topbar">
-        <a href="index.html" class="logo">Portfolio</a>
-        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      </div>
-
-      <main class="content work-detail"></main>
-
-      <footer class="site-footer">
-        <p>© 2026 杉山弥優. All rights reserved.</p>
-      </footer>
+      </nav>
+      <p class="copy">© 2026 杉山弥優. All rights reserved.</p>
     </div>
-  </div>
+  </footer>
 
   <script src="js/works-data.js"></script>
   <script src="js/work-render.js"></script>

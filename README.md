@@ -22,12 +22,12 @@
 ├── js/
 │   ├── main.js             共通UI制御(サイドバー開閉、作品詳細モーダルの開閉、年齢自動計算)
 │   ├── works-data.js       WORKS作品データ(この配列を編集すると一覧・詳細・モーダル・TOPページに反映)
-│   ├── category-groups.js  WORKSカテゴリの大分類3つ×小分類7つの定義
+│   ├── category-groups.js  WORKSカテゴリの大分類3つ×小分類8つの定義
 │   ├── work-render.js      作品カード・作品詳細の共通HTML生成(一覧/詳細/モーダル/TOPページで共用)
 │   ├── works-list.js       WORKS一覧ページの描画・フィルタ(大分類→小分類)・モーダル制御
 │   ├── work-detail.js      WORKS詳細ページ(フルページ版)の描画ロジック
 │   ├── top-works.js        TOPページのWorksセクション(大分類ごとに最大3件をランダム表示)
-│   ├── hero-visual.js      TOPページMV(1枚のビジュアル+情報+次のプレビュー、5秒ごとに自動送り)
+│   ├── hero-visual.js      旧TOPページMV(2026-11-06のWAKUリニューアルで未使用化、ファイルのみ残置)
 │   └── faq.js               FAQアコーディオンの開閉制御
 ├── images/
 │   ├── profile/            プロフィール写真用(現状未挿入)

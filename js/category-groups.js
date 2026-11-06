@@ -8,13 +8,14 @@ const CATEGORY_GROUPS = [
     label: 'デジタル・Web系',
     children: [
       { key: 'web-site', label: 'Webサイト / LP' },
-      { key: 'ad', label: 'デジタル広告・SNS用素材' }
+      { key: 'ad', label: 'デジタル広告・SNS用素材' },
+      { key: 'design-system', label: 'デザインシステム' }
     ]
   },
   {
     label: 'グラフィック・印刷',
     children: [
-      { key: 'pamphlet', label: 'フリーペーパー、パンフレット' },
+      { key: 'pamphlet', label: 'パンフレット' },
       { key: 'biztool', label: 'ビジネスツール' },
       { key: 'illustration', label: 'イラストレーション' }
     ]

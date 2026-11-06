@@ -1,37 +1,25 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
-const sidebarOverlay = document.querySelector('.sidebar-overlay');
+const menuToggle = document.querySelector('.nav-toggle');
+const siteNav = document.querySelector('.site-nav');
 
-function closeSidebar() {
-  if (!sidebar || !sidebarOverlay || !menuToggle) return;
-  sidebar.classList.remove('is-open');
-  sidebarOverlay.classList.remove('is-open');
-  menuToggle.setAttribute('aria-expanded', 'false');
-}
-
-function openSidebar() {
-  if (!sidebar || !sidebarOverlay || !menuToggle) return;
-  sidebar.classList.add('is-open');
-  sidebarOverlay.classList.add('is-open');
-  menuToggle.setAttribute('aria-expanded', 'true');
-}
-
-if (menuToggle && sidebar && sidebarOverlay) {
+if (menuToggle && siteNav) {
   menuToggle.addEventListener('click', () => {
-    if (sidebar.classList.contains('is-open')) {
-      closeSidebar();
-    } else {
-      openSidebar();
-    }
+    const isOpen = siteNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
-  sidebarOverlay.addEventListener('click', closeSidebar);
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.sidebar-nav a').forEach((link) => {
+document.querySelectorAll('.site-nav a').forEach((link) => {
   const linkPage = link.getAttribute('href').split('/').pop();
-  if (linkPage === currentPage) {
-    link.classList.add('is-current');
+  if (linkPage === currentPage || (currentPage === 'work-detail.html' && linkPage === 'works.html')) {
+    link.classList.add('current');
   }
 });
 

@@ -1,17 +1,23 @@
-function renderWorkCardHTML(work) {
-  const thumbHTML =
-    work.images && work.images.length
-      ? `<img src="${work.images[0]}" alt="${work.title}" loading="lazy">`
-      : '作品画像(準備中)';
+function renderWorkThumbHTML(work, extraClass = '') {
+  if (work.images && work.images.length) {
+    return `<div class="work-thumb ${extraClass}"><img src="${work.images[0]}" alt="${work.title}" loading="lazy"></div>`;
+  }
+  if (work.thumbText) {
+    return `<div class="work-thumb ${extraClass}"><span class="work-thumb-text">${work.thumbText}</span><span class="work-thumb-dot" aria-hidden="true"></span></div>`;
+  }
+  return `<div class="work-thumb ${extraClass}">作品画像(準備中)</div>`;
+}
 
+function renderWorkCardHTML(work) {
   return `
-    <div class="work-thumb">${thumbHTML}</div>
+    ${renderWorkThumbHTML(work)}
     <h3>${work.title}</h3>
+    ${work.lead ? `<p class="work-desc">${work.lead}</p>` : ''}
     <div class="work-card-meta">
       <div class="work-tags">
         ${work.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
       </div>
-      <span class="work-period">${work.period}</span>
+      ${work.period ? `<span class="work-period">${work.period}</span>` : ''}
     </div>
   `;
 }
@@ -31,41 +37,47 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
       ? `<div class="work-gallery">${images
           .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
           .join('')}</div>`
-      : `<div class="work-thumb work-detail-thumb">${
-          images.length === 1
-            ? `<img src="${images[0]}" alt="${work.title}" loading="lazy">`
-            : '作品画像(準備中)'
-        }</div>`;
+      : renderWorkThumbHTML(work, 'work-detail-thumb');
+
+  const bodyParagraphs = [];
+  if (work.lead) bodyParagraphs.push(work.lead);
+  if (work.summary && work.summary !== work.lead) bodyParagraphs.push(work.summary);
+  (work.points || []).forEach((p) => bodyParagraphs.push(p));
+
+  const metaRows = [
+    ['Client', work.client],
+    ['Scope', work.role],
+    ['Year', extractYearLabel(work.period || '')]
+  ].filter(([, value]) => value);
 
   return `
     <p class="page-eyebrow">WORKS 詳細</p>
     <h1>${work.title}</h1>
     <div class="work-tags work-detail-tags">
       ${work.tags.map((t) => `<span class="work-tag">${t}</span>`).join('')}
-      <span class="work-tag">Clientwork</span>
+      <span class="work-tag">${work.personal ? 'Personal' : 'Clientwork'}</span>
     </div>
 
     ${galleryHTML}
 
     <div class="work-detail-section">
-      <p>${work.summary}</p>
-      ${work.points.map((p) => `<p>${p}</p>`).join('')}
+      ${bodyParagraphs.map((p) => `<p>${p}</p>`).join('')}
     </div>
 
-    <dl class="work-meta-list">
-      <div>
-        <dt>Client</dt>
-        <dd>${work.client}</dd>
-      </div>
-      <div>
-        <dt>Scope</dt>
-        <dd>${work.role}</dd>
-      </div>
-      <div>
-        <dt>Year</dt>
-        <dd>${extractYearLabel(work.period)}</dd>
-      </div>
-    </dl>
+    ${
+      metaRows.length
+        ? `<dl class="work-meta-list">
+      ${metaRows
+        .map(
+          ([label, value]) => `<div>
+        <dt>${label}</dt>
+        <dd>${value}</dd>
+      </div>`
+        )
+        .join('')}
+    </dl>`
+        : ''
+    }
 
     ${
       work.url

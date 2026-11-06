@@ -5,77 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>杉山弥優 | ポートフォリオ</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <a href="index.html" class="sidebar-profile">
-        <span class="avatar">M</span>
-        <span>
-          <p class="sidebar-role">Designer</p>
-          <p class="sidebar-name">杉山弥優</p>
-        </span>
-      </a>
-      <nav class="sidebar-nav">
-        <a href="works.html">Works</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-dot" aria-hidden="true"></span>Miyu Sugiyama</a>
+      <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="works.html"><span class="dot" aria-hidden="true"></span>Works</a>
+        <a href="about.html"><span class="dot" aria-hidden="true"></span>About</a>
+        <a href="faq.html"><span class="dot" aria-hidden="true"></span>FAQ</a>
+        <a href="news.html"><span class="dot" aria-hidden="true"></span>News</a>
+        <a href="contact.html"><span class="dot" aria-hidden="true"></span>Contact</a>
       </nav>
-      <div class="sidebar-social">
-        <a href="https://www.instagram.com/illustrate_sugiyama/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </aside>
-    <div class="sidebar-overlay"></div>
+    </div>
+  </header>
 
-    <div class="main-column">
-      <div class="mobile-topbar">
-        <a href="index.html" class="logo">Portfolio</a>
-        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
-      </div>
-
-      <main class="content">
-        <section class="hero-card">
-          <div class="hero-caption-column">
-            <p class="hero-caption-top">I'm Miyu Sugiyama</p>
-            <p class="hero-caption-side">Web Designer<br />UI Designer</p>
-            <p class="hero-caption-bottom">Portfolio 2026~</p>
-          </div>
-          <div class="hero-mv"></div>
+  <main class="content">
+        <section class="hero">
+          <p class="hero-en">I'm Miyu Sugiyama</p>
+          <h1>杉山弥優</h1>
+          <p class="hero-role">Web Designer / UI Designer</p>
+          <p class="hero-profile">Web制作会社に新卒入社。コーポレートサイトや採用サイトを中心に、情報設計・UI設計を担当しています。</p>
+          <p class="hero-actions">
+            <a href="works.html" class="button">制作実績を見る</a>
+            <a href="about.html" class="button secondary">制作者について</a>
+          </p>
         </section>
 
-        <div class="hero-text">
-          <h1>Design Portfolio</h1>
-          <p>Web制作会社に新卒入社。コーポレートサイトや採用サイトを中心に、情報設計・UI設計を担当しています。</p>
-          <p class="hero-actions"><a href="works.html" class="button">制作実績を見る</a></p>
-        </div>
-
         <section class="section works-section">
-          <h2>Works</h2>
+          <div class="section-head"><span class="mark" aria-hidden="true"></span><h2>Works</h2></div>
           <p class="section-lead">コーポレートサイトを中心に、ロゴ・印刷物まで幅広く手がけています。</p>
           <div class="works-grid" data-top-works></div>
           <p class="section-footer"><a href="works.html" class="button secondary">作品一覧を見る</a></p>
         </section>
 
         <section class="section contact-section">
-          <h2>Contact</h2>
+          <div class="section-head"><span class="mark" aria-hidden="true"></span><h2>Contact</h2></div>
           <p>WebサイトやUIデザインの制作支援に加え、生成AI（Claudeなど）を活用したデザインシステムの構築や社内ツールの開発・効率化支援も承っております。<br />「AIを使ってデザインや開発のスピードを上げたい」「チーム内の業務フローを効率化したい」といったご相談もお気軽にご連絡ください。</p>
           <a href="contact.html" class="button secondary">お問い合わせページへ</a>
         </section>
-      </main>
+  </main>
 
-      <footer class="site-footer">
-        <p>© 2026 杉山弥優. All rights reserved.</p>
-      </footer>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="logo">Miyu Sugiyama</div>
+      <nav class="foot-nav">
+        <a href="works.html">Works</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/illustrate_sugiyama/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+      <p class="copy">© 2026 杉山弥優. All rights reserved.</p>
     </div>
-  </div>
+  </footer>
 
   <script src="js/works-data.js"></script>
   <script src="js/category-groups.js"></script>
   <script src="js/work-render.js"></script>
   <script src="js/top-works.js"></script>
-  <script src="js/hero-visual.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
