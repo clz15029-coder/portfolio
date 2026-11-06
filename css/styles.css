@@ -56,6 +56,8 @@
   --waku-space-32:32px;
   --waku-space-48:48px;
   --waku-space-64:64px;
+  /* コンテンツ幅 */
+  --waku-content-max:1080px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -72,9 +74,9 @@ a{color:inherit;text-decoration:none;}
 button{font:inherit;}
 :focus-visible{outline:2px solid var(--waku-border-strong);outline-offset:2px;}
 
-.container{max-width:1080px;margin:0 auto;padding:0 var(--waku-space-24);}
+.container{max-width:var(--waku-content-max);margin:0 auto;padding:0 var(--waku-space-24);}
 @media (min-width:768px){ .container{padding:0 var(--waku-space-48);} }
-.content{max-width:1080px;margin:0 auto;padding:0 var(--waku-space-24);width:100%;}
+.content{max-width:var(--waku-content-max);margin:0 auto;padding:0 var(--waku-space-24);width:100%;}
 @media (min-width:768px){ .content{padding:0 var(--waku-space-48);} }
 
 /* ===== Header ===== */
@@ -225,18 +227,17 @@ button{font:inherit;}
 .works-title-row{display:flex;align-items:baseline;gap:var(--waku-space-12);flex-wrap:wrap;padding-top:var(--waku-space-48);}
 .works-title-row h1{font-size:var(--waku-font-size-display);font-weight:700;line-height:1.3;}
 .works-count{font-family:var(--waku-font-ja);color:var(--waku-text-secondary);}
-.filter-pills{display:flex;flex-wrap:wrap;gap:var(--waku-space-8);margin:var(--waku-space-24) 0 var(--waku-space-32);}
+/* 絞り込みタブ：WAKU Tag のラインタイプ（下線で選択中を示す） */
+.filter-pills{display:flex;flex-wrap:wrap;gap:var(--waku-space-24);border-bottom:1px solid var(--waku-border-default);margin:var(--waku-space-24) 0 var(--waku-space-32);}
 .filter-pill{
-  padding:var(--waku-space-8) var(--waku-space-16);
-  border-radius:var(--waku-radius-pill);
-  border:2px solid var(--waku-border-default);
-  background:var(--waku-surface-primary);color:var(--waku-text-primary);
-  font-size:var(--waku-font-size-body-sm);cursor:pointer;
-  transition:border-color .12s ease, background .12s ease;
+  font-family:inherit;
+  font-size:var(--waku-font-size-caption);color:var(--waku-text-secondary);line-height:1.6;
+  padding:var(--waku-space-8) var(--waku-space-4);margin-bottom:-1px;
+  background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
 }
-.filter-pill:hover{border-color:var(--waku-border-strong);}
+.filter-pill:hover{color:var(--waku-text-primary);}
 .filter-pill.is-active{
-  background:var(--waku-accent);border-color:var(--waku-border-strong);font-weight:700;
+  color:var(--waku-text-primary);border-bottom-color:var(--waku-border-strong);
 }
 
 /* ===== Works:詳細 ===== */
