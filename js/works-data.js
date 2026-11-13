@@ -12,6 +12,7 @@
   ・1枚目が一覧カードのサムネイルに使われる
   ・2枚以上入れると、作品詳細ページ(モーダル/フルページ両方)にギャラリーとして並べて表示される
   ・画像ファイル自体は images/works/ フォルダに置く。無ければ []のままでOK(「作品画像(準備中)」と表示される)
+  ・imagesBelow: 文章の下に、元の比率のまま1列で並べる画像(バナーなど)。切り取らずに表示される
   ・thumbText を指定すると、画像の代わりにその文字をタイポグラフィで大きく表示する(WAKU用)
   ・personal: true の作品は、詳細ページのタグが「Clientwork」ではなく「Personal」になる
 */
@@ -212,6 +213,26 @@ const worksData = [
     role: 'バナー・イラスト制作',
     url: '',
     images: ['images/works/11.jpg'],
+    imagesBelow: [
+      'images/works/11-b01.jpg',
+      'images/works/11-b02.jpg',
+      'images/works/11-b03.jpg',
+      'images/works/11-b04.jpg',
+      'images/works/11-b05.jpg',
+      'images/works/11-b06.jpg',
+      'images/works/11-b07.jpg',
+      'images/works/11-b08.jpg',
+      'images/works/11-b09.jpg',
+      'images/works/11-b10.jpg',
+      'images/works/11-b11.jpg',
+      'images/works/11-b12.jpg',
+      'images/works/11-b13.jpg',
+      'images/works/11-b14.jpg',
+      'images/works/11-b15.jpg',
+      'images/works/11-b16.jpg',
+      'images/works/11-b17.jpg',
+      'images/works/11-b18.jpg'
+    ],
     lead: '医療系コラムの特集用アイキャッチ。記事の内容が、ひと目で伝わる絵と文字にしました。',
     summary: '医療従事者向けコラムの特集記事アイキャッチ制作です。月2本程度のペースで、PdMからの指示をもとにPC・SPサイズのバナーを作成しています。トーン・マナーは既定のものがありますが、医療系コラムのため記事ごとに新しいイラストが必要になります。',
     points: [

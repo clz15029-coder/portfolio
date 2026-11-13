@@ -65,6 +65,14 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
     </div>
 
     ${
+      work.imagesBelow && work.imagesBelow.length
+        ? `<div class="work-gallery-below">${work.imagesBelow
+            .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
+            .join('')}</div>`
+        : ''
+    }
+
+    ${
       metaRows.length
         ? `<dl class="work-meta-list">
       ${metaRows

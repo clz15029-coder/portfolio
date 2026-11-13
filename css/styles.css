@@ -325,6 +325,15 @@ button{font:inherit;}
   border-radius:var(--waku-radius-lg);border:1px solid var(--waku-border-default);
 }
 .work-detail-section{margin-bottom:var(--waku-space-48);}
+/* 文章の下に置く画像（バナーなど、元の比率のまま1列に並べる。切り取らない） */
+.work-gallery-below{
+  display:flex;flex-direction:column;
+  gap:var(--waku-space-16);margin-bottom:var(--waku-space-48);
+}
+.work-gallery-below img{
+  width:100%;height:auto;display:block;
+  border-radius:var(--waku-radius-lg);border:1px solid var(--waku-border-default);
+}
 .work-detail-section h2{
   font-size:var(--waku-font-size-heading);font-weight:700;
   line-height:1.4;margin-bottom:var(--waku-space-16);
