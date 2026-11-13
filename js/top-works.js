@@ -24,6 +24,13 @@ function renderTopWorks() {
     card.className = 'work-card';
     card.href = `work-detail.html?id=${w.id}`;
     card.innerHTML = renderWorkCardHTML(w);
+    // 作品一覧ページと同じく、ページ遷移ではなく右側のパネルで詳細を開く
+    card.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (typeof openDetailModal !== 'function' || typeof renderWorkDetailHTML !== 'function') return;
+      e.preventDefault();
+      openDetailModal(renderWorkDetailHTML(w, { showBackLink: false }));
+    });
     grid.appendChild(card);
   });
 }
