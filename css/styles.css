@@ -156,7 +156,9 @@ button{font:inherit;}
 @media (min-width:881px){
   .hero-split{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);align-items:stretch;}
   .hero-text{align-self:center;}
-  .hero-flow{height:auto;}
+  /* 傾けると四隅が内側に引っ込むので、縦に120px長くして上下にはみ出させて埋める。
+     横は拡大を控えめにし、全体を右へ40px寄せて左の文章に被らないようにする */
+  .hero-flow{height:calc(100% + 120px);align-self:center;transform:translateX(40px) rotate(-5deg) scale(1.1);}
 }
 .hero-portfolio{
   font-family:var(--waku-font-en);font-weight:700;
@@ -190,9 +192,8 @@ button{font:inherit;}
 .hero-flow{
   display:grid;grid-template-columns:repeat(3, 1fr);gap:var(--waku-space-16);
   height:min(82vh, 720px);overflow:hidden;
-  /* 参考イメージのように、画像の列全体を左へ少し傾ける(はみ出しはヒーロー側で隠す)。
-     傾けると右下に白い三角ができやすいので、大きめに拡大して少し下へ寄せて埋める */
-  transform:rotate(-5deg) scale(1.18) translateY(2%);
+  /* 参考イメージのように、画像の列全体を左へ少し傾ける(はみ出しはヒーロー側で隠す) */
+  transform:rotate(-5deg) scale(1.1);
   -webkit-mask-image:linear-gradient(to bottom, transparent, #000 4%, #000 97%, transparent);
   mask-image:linear-gradient(to bottom, transparent, #000 4%, #000 97%, transparent);
 }
