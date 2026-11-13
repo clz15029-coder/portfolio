@@ -162,6 +162,21 @@ button{font:inherit;}
   width:10px;height:10px;border-radius:50%;background:var(--waku-accent);
   flex:none;margin-top:.35em;margin-left:var(--waku-space-8);
 }
+/* タイプライターのカーソル(末尾で点滅する縦棒) */
+.hero-type::after{
+  content:"";display:inline-block;
+  width:.055em;height:.72em;margin-left:.07em;
+  background:var(--waku-text-primary);
+  vertical-align:baseline;
+  animation:heroCaretBlink .85s steps(1) infinite;
+}
+@keyframes heroCaretBlink{
+  0%, 49%{opacity:1;}
+  50%, 100%{opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-type::after{animation:none;opacity:0;}
+}
 .hero-tagline{
   margin-top:var(--waku-space-16);
   color:var(--waku-text-secondary);font-size:var(--waku-font-size-body);
