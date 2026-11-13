@@ -149,6 +149,14 @@ button{font:inherit;}
   width:100vw;margin-left:calc(50% - 50vw);
   padding-left:calc((100vw - min(100vw, var(--waku-content-max))) / 2 + max(24px, 5vw));
   padding-right:0;
+  position:relative;overflow:hidden;
+  padding-top:var(--waku-space-32);padding-bottom:var(--waku-space-32);
+}
+/* MVは画面の高さいっぱい(スティッキーヘッダー64pxを引いた分) */
+@media (min-width:881px){
+  .hero-split{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);align-items:stretch;}
+  .hero-text{align-self:center;}
+  .hero-flow{height:auto;}
 }
 .hero-portfolio{
   font-family:var(--waku-font-en);font-weight:700;
@@ -182,8 +190,40 @@ button{font:inherit;}
 .hero-flow{
   display:grid;grid-template-columns:repeat(3, 1fr);gap:var(--waku-space-16);
   height:min(82vh, 720px);overflow:hidden;
+  /* 参考イメージのように、画像の列全体を左へ少し傾ける(はみ出しはヒーロー側で隠す) */
+  transform:rotate(-5deg) scale(1.12);
   -webkit-mask-image:linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent);
   mask-image:linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent);
+}
+/* スクロールを促すサイン(左下) */
+.hero-scroll{
+  position:absolute;z-index:2;
+  left:calc((100vw - min(100vw, var(--waku-content-max))) / 2 + max(24px, 5vw));
+  bottom:var(--waku-space-24);
+  display:flex;flex-direction:column;align-items:center;gap:var(--waku-space-8);
+}
+.hero-scroll-text{
+  font-family:var(--waku-font-en);font-weight:600;
+  font-size:var(--waku-font-size-caption);letter-spacing:.24em;
+  color:var(--waku-text-secondary);
+}
+.hero-scroll-line{
+  position:relative;display:block;
+  width:2px;height:56px;border-radius:2px;
+  background:var(--waku-border-default);overflow:hidden;
+}
+.hero-scroll-line::after{
+  content:"";position:absolute;left:0;top:-40%;
+  width:100%;height:40%;border-radius:2px;
+  background:var(--waku-accent);
+  animation:heroScrollDot 1.8s ease-in-out infinite;
+}
+@keyframes heroScrollDot{
+  0%{top:-40%;}
+  60%, 100%{top:100%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .hero-scroll-line::after{animation:none;top:0;}
 }
 .hero-col{overflow:hidden;}
 .hero-track{display:flex;flex-direction:column;animation:heroFlowUp 60s linear infinite;}
