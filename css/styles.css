@@ -157,8 +157,8 @@ button{font:inherit;}
   .hero-split{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);align-items:stretch;}
   .hero-text{align-self:center;}
   /* 傾けると四隅が内側に引っ込むので、縦に120px長くして上下にはみ出させて埋める。
-     横は拡大を控えめにし、全体を右へ40px寄せて左の文章に被らないようにする */
-  .hero-flow{height:calc(100% + 120px);align-self:center;transform:translateX(40px) rotate(-5deg) scale(1.1);}
+     横は拡大を控えめにし、全体を右へ寄せて左の文章に被らないようにする（余白は translateX で調整） */
+  .hero-flow{height:calc(100% + 120px);align-self:center;transform:translateX(88px) rotate(-5deg) scale(1.1);}
 }
 .hero-portfolio{
   font-family:var(--waku-font-en);font-weight:700;
