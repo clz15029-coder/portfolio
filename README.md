@@ -1,6 +1,6 @@
 # Portfolio
 
-杉山弥優のポートフォリオサイト。フレームワークを使わない素のHTML/CSS/JS構成で、GitHub Pagesで公開しています。
+安川弥優のポートフォリオサイト。フレームワークを使わない素のHTML/CSS/JS構成で、GitHub Pagesで公開しています。
 
 - 公開URL: https://clz15029-coder.github.io/portfolio/
 
