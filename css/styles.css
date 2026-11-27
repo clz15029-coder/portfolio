@@ -351,7 +351,7 @@ button{font:inherit;}
 
 /* ===== Works:詳細 ===== */
 main.work-detail{max-width:920px;}
-.work-detail{padding-bottom:var(--waku-space-64);}
+.work-detail{padding-top:var(--waku-space-48);padding-bottom:var(--waku-space-64);}
 .work-detail h1{
   font-size:var(--waku-font-size-display);font-weight:700;
   line-height:1.3;margin-bottom:var(--waku-space-16);
