@@ -327,10 +327,9 @@ const worksData = [
     url: 'https://clz15029-coder.github.io/design-system/',
     images: [],
     thumbText: 'WAKU',
-    imagesBelow: [
-      'images/works/16-1.jpg',
-      'images/works/16-2.jpg',
-      'images/works/16-3.jpg'
+    imageSections: [
+      { images: ['images/works/16-logo.svg'], columns: 2 },
+      { images: ['images/works/16-1.jpg', 'images/works/16-2.jpg', 'images/works/16-3.jpg'] }
     ],
     personal: true,
     lead: '制作物のテイストで迷わないために、ゼロから作った個人デザインシステムです。色・文字・余白などの基礎と、よく使う部品の決まりを、Figmaとドキュメントサイトにまとめました。目的は「迷わず作れる、わたしの決まりごと」です。',
