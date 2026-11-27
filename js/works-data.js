@@ -315,6 +315,7 @@ const worksData = [
     lead: '福島県の産業廃棄物処理会社「福興産業」のコーポレートサイト。事業の全体像が、イラストで分かりやすく伝わるようにしました。',
     summary: '',
     points: [],
+    imagesBelow: ['images/works/15-1.jpg', 'images/works/15-2.jpg'],
     process: []
   },
   {
