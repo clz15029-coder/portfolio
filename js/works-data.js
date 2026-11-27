@@ -310,7 +310,7 @@ const worksData = [
     tags: ['Webサイト / LP'],
     period: '',
     role: '',
-    url: '',
+    url: 'https://fukukou.co.jp/',
     images: ['images/works/15.jpg'],
     lead: '福島県の産業廃棄物処理会社「福興産業」のコーポレートサイト。事業の全体像が、イラストで分かりやすく伝わるようにしました。',
     summary: '',
