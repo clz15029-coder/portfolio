@@ -60,6 +60,29 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
 
     ${galleryHTML}
 
+    <div class="work-meta-group">
+    ${
+      metaRows.length
+        ? `<dl class="work-meta-list">
+      ${metaRows
+        .map(
+          ([label, value]) => `<div>
+        <dt>${label}</dt>
+        <dd>${value}</dd>
+      </div>`
+        )
+        .join('')}
+    </dl>`
+        : ''
+    }
+
+    ${
+      work.url
+        ? `<p class="work-detail-link">${linkIcon}<a href="${work.url}" target="_blank" rel="noopener">${work.url}</a></p>`
+        : ''
+    }
+    </div>
+
     <div class="work-detail-section">
       ${bodyParagraphs.map((p) => `<p>${p}</p>`).join('')}
     </div>
@@ -81,27 +104,6 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
               .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
               .join('')}</div>`
           : ''
-    }
-
-    ${
-      metaRows.length
-        ? `<dl class="work-meta-list">
-      ${metaRows
-        .map(
-          ([label, value]) => `<div>
-        <dt>${label}</dt>
-        <dd>${value}</dd>
-      </div>`
-        )
-        .join('')}
-    </dl>`
-        : ''
-    }
-
-    ${
-      work.url
-        ? `<p class="work-detail-link">${linkIcon}<a href="${work.url}" target="_blank" rel="noopener">${work.url}</a></p>`
-        : ''
     }
 
     ${showBackLink ? '<p class="section-footer"><a href="works.html" class="button secondary">作品一覧に戻る</a></p>' : ''}
