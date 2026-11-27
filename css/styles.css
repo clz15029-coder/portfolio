@@ -94,6 +94,7 @@ button{font:inherit;}
 .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--waku-accent);flex:none;}
 .site-nav{display:flex;gap:var(--waku-space-24);align-items:center;}
 .site-nav a{
+  font-family:var(--waku-font-en),var(--waku-font-ja);
   color:var(--waku-text-primary);text-decoration:none;
   font-size:var(--waku-font-size-body);
   display:inline-flex;align-items:center;gap:var(--waku-space-8);
@@ -528,13 +529,14 @@ body.modal-open{overflow:hidden;}
 .site-footer .logo{color:var(--waku-color-white);}
 .site-footer .foot-nav{display:flex;gap:var(--waku-space-24);margin:var(--waku-space-16) 0;flex-wrap:wrap;}
 .site-footer .foot-nav a{
+  font-family:var(--waku-font-en),var(--waku-font-ja);
   color:var(--waku-color-white);text-decoration:none;
   font-size:var(--waku-font-size-body);
 }
 .site-footer .copy{
   font-size:var(--waku-font-size-caption);
   color:var(--waku-color-white);opacity:.7;
-  font-family:var(--waku-font-ja);
+  font-family:var(--waku-font-en),var(--waku-font-ja);
 }
 
 /* ===== レスポンシブ ===== */
