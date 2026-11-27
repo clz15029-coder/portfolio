@@ -376,6 +376,12 @@ button{font:inherit;}
   width:100%;height:auto;display:block;
   border-radius:var(--waku-radius-lg);border:1px solid var(--waku-border-default);
 }
+.work-image-section{margin-bottom:var(--waku-space-48);}
+.work-image-section h3{
+  font-size:var(--waku-font-size-heading);font-weight:700;
+  line-height:1.4;margin-bottom:var(--waku-space-16);
+}
+.work-image-section .work-gallery-below{margin-bottom:0;}
 .work-detail-section h2{
   font-size:var(--waku-font-size-heading);font-weight:700;
   line-height:1.4;margin-bottom:var(--waku-space-16);

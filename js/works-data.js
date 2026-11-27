@@ -73,6 +73,12 @@ const worksData = [
       'ラフは3案ほど出したうえで方向性を絞り込み、各段階で逐一確認を取ることで、後戻りが発生した場合の追加費用交渉にもつなげられる体制にしました。',
       'ロゴで固めたトーン＆マナーをもとに、コーポレートサイトでは配色・余白・装飾のバランスまで一貫性を持たせ、ロゴ使用ルールをまとめたガイドライン（6ページ程度）も制作しました。社内外への説明資料として活用できる形にしました。'
     ],
+    imageSections: [
+      { heading: 'ヒアリングシート', images: ['images/works/03-s1-1.jpg', 'images/works/03-s1-2.jpg'] },
+      { heading: '情報整理、キーワード抽出', images: ['images/works/03-s2-1.jpg', 'images/works/03-s2-2.jpg', 'images/works/03-s2-3.jpg'] },
+      { heading: '競合調査、方向軸策定', images: ['images/works/03-s3-1.jpg', 'images/works/03-s3-2.jpg', 'images/works/03-s3-3.jpg'] },
+      { heading: '初回ロゴ提案', images: ['images/works/03-s4-1.jpg', 'images/works/03-s4-2.jpg', 'images/works/03-s4-3.jpg'] }
+    ],
     process: []
   },
   {

@@ -65,11 +65,22 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
     </div>
 
     ${
-      work.imagesBelow && work.imagesBelow.length
-        ? `<div class="work-gallery-below">${work.imagesBelow
-            .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
+      work.imageSections && work.imageSections.length
+        ? `<div class="work-image-sections">${work.imageSections
+            .map(
+              (sec) => `<section class="work-image-section">
+      <h3>${sec.heading}</h3>
+      <div class="work-gallery-below">${sec.images
+        .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
+        .join('')}</div>
+    </section>`
+            )
             .join('')}</div>`
-        : ''
+        : work.imagesBelow && work.imagesBelow.length
+          ? `<div class="work-gallery-below">${work.imagesBelow
+              .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
+              .join('')}</div>`
+          : ''
     }
 
     ${
