@@ -292,11 +292,12 @@ const worksData = [
     tags: ['Webサイト / LP'],
     period: '',
     role: '',
-    url: '',
+    url: 'https://kddihall.kddi.com/',
     images: ['images/works/14.jpg'],
     lead: '大手町駅直結のイベントホール「KDDI HALL」のサイト。ホールの魅力と利用の流れが、すっきり伝わるようにしました。',
     summary: '',
     points: [],
+    imagesBelow: ['images/works/14-1.jpg', 'images/works/14-2.jpg'],
     process: []
   },
   {
