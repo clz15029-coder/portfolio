@@ -253,6 +253,7 @@ button{font:inherit;}
 /* ===== Button ===== */
 .button{
   display:inline-flex;align-items:center;justify-content:center;
+  width:320px;max-width:100%;
   height:64px;padding:0 var(--waku-space-24);
   border-radius:var(--waku-radius-pill);
   font-family:var(--waku-font-ja);
@@ -265,7 +266,7 @@ button{font:inherit;}
 .button:hover{box-shadow:var(--waku-shadow-floating);transform:translateY(-4px);}
 .button:active{box-shadow:none;transform:translate(2px,4px);}
 .button.secondary{background:var(--waku-surface-primary);color:var(--waku-text-primary);}
-.button.small{height:40px;padding:0 var(--waku-space-16);font-size:14px;}
+.button.small{width:auto;height:40px;padding:0 var(--waku-space-16);font-size:14px;}
 
 /* ===== Sections ===== */
 .section{padding:var(--waku-space-48) 0;}
