@@ -382,6 +382,9 @@ button{font:inherit;}
   line-height:1.4;margin-bottom:var(--waku-space-16);
 }
 .work-image-section .work-gallery-below{margin-bottom:0;}
+.work-gallery-below.is-grid2{
+  display:grid;grid-template-columns:1fr 1fr;align-items:start;
+}
 .work-detail-section h2{
   font-size:var(--waku-font-size-heading);font-weight:700;
   line-height:1.4;margin-bottom:var(--waku-space-16);

@@ -69,8 +69,8 @@ function renderWorkDetailHTML(work, { showBackLink = false } = {}) {
         ? `<div class="work-image-sections">${work.imageSections
             .map(
               (sec) => `<section class="work-image-section">
-      <h3>${sec.heading}</h3>
-      <div class="work-gallery-below">${sec.images
+      ${sec.heading ? `<h3>${sec.heading}</h3>` : ''}
+      <div class="work-gallery-below${sec.columns === 2 ? ' is-grid2' : ''}">${sec.images
         .map((src) => `<img src="${src}" alt="${work.title}" loading="lazy">`)
         .join('')}</div>
     </section>`

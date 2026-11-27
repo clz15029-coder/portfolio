@@ -266,7 +266,10 @@ const worksData = [
     lead: 'サイトで使うイラスト。文章だけでは伝わりにくい部分を、やさしい絵で補いました。',
     summary: '',
     points: [],
-    imagesBelow: ['images/works/12-1.gif', 'images/works/12-2.jpg', 'images/works/12-3.jpg', 'images/works/12-4.jpg', 'images/works/12-5.jpg', 'images/works/12-6.jpg', 'images/works/12-7.jpg', 'images/works/12-8.jpg', 'images/works/12-9.jpg'],
+    imageSections: [
+      { images: ['images/works/12-1.gif'] },
+      { images: ['images/works/12-2.jpg', 'images/works/12-3.jpg', 'images/works/12-4.jpg', 'images/works/12-5.jpg', 'images/works/12-6.jpg'], columns: 2 }
+    ],
     process: []
   },
   {
